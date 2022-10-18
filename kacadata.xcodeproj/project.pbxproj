@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496A6C9C28FD3562009A1C01 /* ItemSales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6C9B28FD3562009A1C01 /* ItemSales.swift */; };
+		496A6C9E28FD36ED009A1C01 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6C9D28FD36ED009A1C01 /* Transaction.swift */; };
+		496A6CA028FD39BA009A1C01 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6C9F28FD39BA009A1C01 /* Checkout.swift */; };
 		49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA96D28F5467300EDC09D /* kacadataApp.swift */; };
 		49AAA97028F5467300EDC09D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA96F28F5467300EDC09D /* ContentView.swift */; };
 		49AAA97228F5467400EDC09D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AAA97128F5467400EDC09D /* Assets.xcassets */; };
 		49AAA97528F5467400EDC09D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AAA97428F5467400EDC09D /* Preview Assets.xcassets */; };
 		49AAA97728F5467400EDC09D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA97628F5467400EDC09D /* Persistence.swift */; };
 		49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */; };
+		49CB34F028F549DC00C8F656 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CB34EF28F549DC00C8F656 /* User.swift */; };
+		49CB34F228F54AB800C8F656 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CB34F128F54AB800C8F656 /* Business.swift */; };
+		49CB34F428F54B5200C8F656 /* Outlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CB34F328F54B5200C8F656 /* Outlet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		496A6C9B28FD3562009A1C01 /* ItemSales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSales.swift; sourceTree = "<group>"; };
+		496A6C9D28FD36ED009A1C01 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		496A6C9F28FD39BA009A1C01 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		49AAA96A28F5467300EDC09D /* kacadata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kacadata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AAA96D28F5467300EDC09D /* kacadataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kacadataApp.swift; sourceTree = "<group>"; };
 		49AAA96F28F5467300EDC09D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +32,9 @@
 		49AAA97428F5467400EDC09D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49AAA97628F5467400EDC09D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		49AAA97928F5467400EDC09D /* kacadata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kacadata.xcdatamodel; sourceTree = "<group>"; };
+		49CB34EF28F549DC00C8F656 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49CB34F128F54AB800C8F656 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		49CB34F328F54B5200C8F656 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,7 @@
 		49AAA96C28F5467300EDC09D /* kacadata */ = {
 			isa = PBXGroup;
 			children = (
+				49CB34EE28F5499400C8F656 /* Model */,
 				49AAA96D28F5467300EDC09D /* kacadataApp.swift */,
 				49AAA96F28F5467300EDC09D /* ContentView.swift */,
 				49AAA97128F5467400EDC09D /* Assets.xcassets */,
@@ -71,6 +84,19 @@
 				49AAA97428F5467400EDC09D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49CB34EE28F5499400C8F656 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49CB34EF28F549DC00C8F656 /* User.swift */,
+				49CB34F128F54AB800C8F656 /* Business.swift */,
+				49CB34F328F54B5200C8F656 /* Outlet.swift */,
+				496A6C9B28FD3562009A1C01 /* ItemSales.swift */,
+				496A6C9D28FD36ED009A1C01 /* Transaction.swift */,
+				496A6C9F28FD39BA009A1C01 /* Checkout.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +169,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CB34F428F54B5200C8F656 /* Outlet.swift in Sources */,
+				496A6C9C28FD3562009A1C01 /* ItemSales.swift in Sources */,
 				49AAA97728F5467400EDC09D /* Persistence.swift in Sources */,
 				49AAA97028F5467300EDC09D /* ContentView.swift in Sources */,
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
+				49CB34F228F54AB800C8F656 /* Business.swift in Sources */,
+				49CB34F028F549DC00C8F656 /* User.swift in Sources */,
+				496A6CA028FD39BA009A1C01 /* Checkout.swift in Sources */,
 				49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */,
+				496A6C9E28FD36ED009A1C01 /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
