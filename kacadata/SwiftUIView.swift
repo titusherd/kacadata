@@ -8,22 +8,26 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+    let image = Image(systemName: "questionmark.circle.fill")
+    
     var body: some View {
         NavigationView {
             VStack {
-                Image(systemName: "house")
+                Image("Sync Data Page image")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 358, height: 382, alignment: .center)
                     .padding()
                 
-                Text("Connecting Data Within Our App")
-                    .font(.system(size: 46, weight: .bold, design: .rounded))
-                    .padding()
+                (Text("Connecting Data \nWithin Our App ") + Text(image))
+                    .font(.system(size: 38, weight: .bold, design: .rounded))
+                    .multilineTextAlignment(.leading)
+                    .padding(EdgeInsets(top: 0, leading: -38, bottom: 20, trailing: 0))
                 
-                Text("Connect your data and let our app do the rest. Align your work, and recommend your promo in accurate.")
-                    .font(.system(size: 22, weight: .regular, design: .rounded))
-                    .padding()
+                Text("Connect your data and let our app do the rest. \nAlign your work, and recommend your promo in accurate.")
+                    .font(.system(size: 18, weight: .regular, design: .rounded))
+                    .multilineTextAlignment(.leading)
+                    .padding(EdgeInsets(top: 0, leading: 35, bottom: 40, trailing: 36))
                 
                 NavigationLink(
                     destination: Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/),
