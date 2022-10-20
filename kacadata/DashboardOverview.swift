@@ -39,6 +39,44 @@ struct DashboardOverview: View {
                         })
                     }
                     .padding()
+                    .padding(.bottom, 26.0)
+                    
+                    VStack(alignment: .leading){
+                        HStack{
+                            Text("| Overview")
+                                
+                            Spacer()
+                        }
+                        .padding()
+                        .padding(.bottom, 16.0)
+                        
+                        VStack{
+                            Text("Income")
+                                .padding(3)
+                                
+                            HStack{
+                                Text("Rp495.000.000,00")
+                                
+                                Spacer()
+                                
+                                (Text("test") + Text("5,5 %"))
+                            }
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(20)
+                        .frame(width: 326, height: 216)
+                        HStack{
+                            Text("Based on the sales in this month. The product sold and gained 495 million an increase 5.5% than last month.")
+                                
+                            Spacer()
+                        }
+                        .padding()
+                    }
+                    .padding(8)
+                    .background(Color.gray)
+                    .cornerRadius(20)
+                    .frame(width: 358, height: 324)
                 }
                 .navigationTitle("Dashboard")
                 .navigationBarHidden(true)
