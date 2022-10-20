@@ -9,11 +9,13 @@ import SwiftUI
 
 struct DashboardOverview: View {
     let image = Image(systemName: "chevron.down")
-
+    let up = Image(systemName: "arrow.up")
+    let down = Image(systemName: "arrow.down")
     
     var body: some View {
         NavigationView{
             ScrollView{
+                // MARK: - Dashboard Heading
                 VStack{
                     HStack{
                         Text("Dashboard")
@@ -42,6 +44,7 @@ struct DashboardOverview: View {
                     .padding(.bottom, 26.0)
                     
                     VStack(alignment: .leading){
+                        // MARK: - Overview Card
                         HStack{
                             Text("| Overview")
                                 
@@ -50,33 +53,43 @@ struct DashboardOverview: View {
                         .padding()
                         .padding(.bottom, 16.0)
                         
-                        VStack{
+                        // MARK: - Income Card
+                        VStack(alignment: .leading){
                             Text("Income")
                                 .padding(3)
                                 
                             HStack{
                                 Text("Rp495.000.000,00")
+                                    .font(.system(size:24,
+                                                  weight: .medium,
+                                                  design: .rounded))
                                 
                                 Spacer()
                                 
-                                (Text("test") + Text("5,5 %"))
+                                (Text(up) + Text(" 5,5 %"))
+                                    .font(.system(size:11,
+                                                  weight: .semibold,
+                                                  design: .rounded))
                             }
                         }
-                        .padding()
+                        .padding(.leading, 25.0)
+                        .padding(.trailing, 12.0)
                         .background(Color.white)
-                        .cornerRadius(20)
-                        .frame(width: 326, height: 216)
+                        .cornerRadius(8)
+                        .frame(width: 342,height: 216,
+                               alignment: .center)
+                        
+                        // MARK: - Summary Word Card
                         HStack{
-                            Text("Based on the sales in this month. The product sold and gained 495 million an increase 5.5% than last month.")
-                                
-                            Spacer()
+                            Text("Based on the sales in this month. The product sold and gained 495 million an **increase 5.5%** than last month.")
                         }
                         .padding()
                     }
                     .padding(8)
                     .background(Color.gray)
-                    .cornerRadius(20)
-                    .frame(width: 358, height: 324)
+                    .cornerRadius(8)
+                    .frame(width: 358,
+                           height: 324)
                 }
                 .navigationTitle("Dashboard")
                 .navigationBarHidden(true)
