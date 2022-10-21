@@ -15,6 +15,7 @@
 		49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */; };
 		F653495928FE9E6600C1E9DD /* SycnPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653495828FE9E6600C1E9DD /* SycnPageView.swift */; };
 		F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */; };
+		F66665B429012A340083E6B8 /* SiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B329012A340083E6B8 /* SiteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		49AAA97928F5467400EDC09D /* kacadata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kacadata.xcdatamodel; sourceTree = "<group>"; };
 		F653495828FE9E6600C1E9DD /* SycnPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SycnPageView.swift; sourceTree = "<group>"; };
 		F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOverview.swift; sourceTree = "<group>"; };
+		F66665B329012A340083E6B8 /* SiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				49AAA97628F5467400EDC09D /* Persistence.swift */,
 				49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */,
 				49AAA97328F5467400EDC09D /* Preview Content */,
+				F66665B329012A340083E6B8 /* SiteView.swift */,
 			);
 			path = kacadata;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				49AAA97728F5467400EDC09D /* Persistence.swift in Sources */,
 				F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */,
+				F66665B429012A340083E6B8 /* SiteView.swift in Sources */,
 				49AAA97028F5467300EDC09D /* ContentView.swift in Sources */,
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
 				49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */,
