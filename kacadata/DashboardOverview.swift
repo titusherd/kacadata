@@ -120,7 +120,7 @@ struct DashboardOverview: View {
                             Spacer()
                         }
                         .padding([.top, .leading, .trailing])
-                        .padding(.bottom, 24.0)
+                        .padding(.bottom, 20.0)
                         
                         // MARK: - Income Card
                         VStack(alignment: .leading){
@@ -136,7 +136,7 @@ struct DashboardOverview: View {
                             
                             HStack{
                                 Text("Rp495.000.000,00")
-                                    .font(.system(size:24
+                                    .font(.system(size:18
                                                   ,weight: .medium
                                                   ,design: .rounded
                                                  )
@@ -147,7 +147,7 @@ struct DashboardOverview: View {
                                 Spacer()
                                 
                                 (Text(up) + Text(" 5,5 %"))
-                                    .font(.system(size:11
+                                    .font(.system(size:18
                                                   ,weight: .semibold
                                                   ,design: .rounded
                                                  )
@@ -155,10 +155,11 @@ struct DashboardOverview: View {
                                     .foregroundColor(.white)
                             }
                             .padding(.trailing)
+                            .padding(.bottom, 14.0)
                             
                             AnimatedChart()
                                 .padding(.trailing, 5.0)
-                                .padding(.bottom, 18.0)
+                                .padding(.bottom, 20.0)
                             
                         }
                         .padding(.leading, 25.0)
@@ -166,7 +167,7 @@ struct DashboardOverview: View {
 //                        .background(Color.CustomBlack)
                         .background(Color.CustomDarkTeal)
                         .cornerRadius(8)
-                        .frame(width: 342
+                        .frame(width: 325
                                ,height: 216
                                ,alignment: .center)
                         
@@ -185,7 +186,7 @@ struct DashboardOverview: View {
                     .background(Color.CustomLightTeal)
                     .cornerRadius(8)
                     .frame(width: 358
-                           //                         ,height: 324
+//                                                    ,height: 324
                     )
                 }
                 .navigationTitle("Dashboard")

@@ -15,13 +15,14 @@ struct SyncPageView: View {
             // MARK: - Image Section
 
             VStack {
-                Image("Sync Data Page image")
+                Image("Asset cable1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 358,
-                           height: 382,
-                           alignment: .center)
-                    .padding()
+                           height: 342,
+                           alignment: .bottomLeading)
+                    .padding(.bottom, 50.0)
+                    .padding(.leading, -32.0)
                 
                 // MARK: - Text Section
                 
