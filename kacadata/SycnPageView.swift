@@ -12,6 +12,8 @@ struct SyncPageView: View {
     
     var body: some View {
         NavigationView {
+            // MARK: - Image Section
+
             VStack {
                 Image("Sync Data Page image")
                     .resizable()
@@ -20,6 +22,8 @@ struct SyncPageView: View {
                            height: 382,
                            alignment: .center)
                     .padding()
+                
+                // MARK: - Text Section
                 
                 HStack{
 //                    (Text("Connecting Data \nWithin Our App ") + Text(image))
@@ -55,6 +59,8 @@ struct SyncPageView: View {
                                         leading: -17,
                                         bottom: 32,
                                         trailing: 0))
+                
+                // MARK: - Button Section
                 
                 NavigationLink(
                     destination: Text("This is page for MOKA Sync"),

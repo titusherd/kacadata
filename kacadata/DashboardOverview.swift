@@ -14,6 +14,7 @@ struct DashboardOverview: View {
     let down = Image(systemName: "arrow.down")
     
     @State var sampleAnalytics: [SiteView] = sample_analytics
+    @State private var showSheet: Bool = false
     
     var body: some View {
         NavigationView{
@@ -30,25 +31,48 @@ struct DashboardOverview: View {
                         
                         Spacer()
                         
-                        Button(action: {
-                            
-                        }, label: {
-                            (Text("Monthly  ") + Text(image))
-                                .frame(width: 81,
-                                       height: 28
-                                )
-                                .font(.system(size:11
-                                              ,weight: .semibold
+                        Button(){
+                            showSheet.toggle()
+                        }  label: {(Text("Monthly  ") + Text(image))
+                            .frame(width: 81,
+                                   height: 28
+                            )
+                            .font(.system(size:11
+                                          ,weight: .semibold
+                                          ,design: .rounded
+                                         )
+                            )
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(4)
+                    }
+                        .sheet(isPresented: $showSheet) {
+                            Text("Choose Period of Time")
+                                .font(.system(size:13
+                                              ,weight: .bold
                                               ,design: .rounded
                                              )
                                 )
-                                .background(Color.gray)
-                                .foregroundColor(.white)
-                                .cornerRadius(4)
-                        })
+                                .multilineTextAlignment(.center)
+                                .padding(.bottom, 8.0)
+                            
+                            Text("Select the time you want to see the details of the data or insight about the data.")
+                                .font(.system(size:13
+                                              ,weight: .regular
+                                              ,design: .rounded
+                                             )
+                                )
+                                .multilineTextAlignment(.center)
+                                .padding(.bottom, 8.0)
+                                .padding(.horizontal, 32.0)
+                            
+                            
+                            
+                                .presentationDetents([.large, .fraction(0.75)])
+                        }
                     }
-                    .padding()
-                    .padding(.bottom, 26.0)
+                    .padding([.top, .leading, .trailing])
+                    .padding(.bottom, 25.0)
                     
                     VStack(alignment: .center){
                         // MARK: - Overview Card
@@ -63,13 +87,19 @@ struct DashboardOverview: View {
                             
                             Spacer()
                         }
-                        .padding()
-                        .padding(.bottom, 16.0)
+                        .padding([.top, .leading, .trailing])
+                        .padding(.bottom, 24.0)
                         
                         // MARK: - Income Card
                         VStack(alignment: .leading){
                             Text("Income")
-                                .padding(3)
+                                .font(.system(size:12
+                                              ,weight: .medium
+                                              ,design: .default
+                                             )
+                                )
+                                .padding(.top, 18.0)
+                                .padding(.bottom, 0.000000005)
                             
                             HStack{
                                 Text("Rp495.000.000,00")
@@ -88,8 +118,11 @@ struct DashboardOverview: View {
                                                  )
                                     )
                             }
+                            .padding(.trailing)
                             
                             AnimatedChart()
+                                .padding(.trailing, 5.0)
+                                .padding(.bottom, 18.0)
                             
                         }
                         .padding(.leading, 25.0)
@@ -103,12 +136,19 @@ struct DashboardOverview: View {
                         // MARK: - Summary Word Card
                         
                         Text("Based on the sales in this month. The product sold and gained 495 million an **increase 5.5%** than last month.")
-                            .padding()
+                            .font(.system(size:11
+                                          ,weight: .regular
+                                          ,design: .rounded
+                                         )
+                            )
+                            .padding(.top, 18.0)
+                            .padding(.horizontal, 10.0)
+                            .padding(.bottom, 16.0)
                     }
                     .background(Color.gray)
                     .cornerRadius(8)
                     .frame(width: 358
-                           //                           ,height: 324
+                           //                         ,height: 324
                     )
                 }
                 .navigationTitle("Dashboard")
@@ -117,6 +157,7 @@ struct DashboardOverview: View {
         }
     }
     
+    // MARK: - Overview Income Analytics Function
     @ViewBuilder
     func AnimatedChart()->some View{
         let max = sampleAnalytics.max { item1, item2 in
@@ -134,7 +175,10 @@ struct DashboardOverview: View {
             }
         }
         // MARK: Customizing Y-Axis Length
-            .frame(height: 150)
+        .frame(
+            //                width: 150,
+            height: 140
+        )
     }
     
     
