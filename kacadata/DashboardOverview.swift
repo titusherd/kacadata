@@ -31,6 +31,7 @@ struct DashboardOverview: View {
                         
                         Spacer()
                         
+                        // MARK: - Monthly Modal
                         Button(){
                             showSheet.toggle()
                         }  label: {(Text("Monthly  ") + Text(image))
@@ -54,6 +55,7 @@ struct DashboardOverview: View {
                                              )
                                 )
                                 .multilineTextAlignment(.center)
+                                .padding([.top, .leading, .trailing], 38.0)
                                 .padding(.bottom, 8.0)
                             
                             Text("Select the time you want to see the details of the data or insight about the data.")
@@ -63,12 +65,42 @@ struct DashboardOverview: View {
                                              )
                                 )
                                 .multilineTextAlignment(.center)
-                                .padding(.bottom, 8.0)
+                                .padding(.bottom, 14.0)
                                 .padding(.horizontal, 32.0)
                             
-                            
-                            
-                                .presentationDetents([.large, .fraction(0.75)])
+                            Form{
+                                Button("Daily") {
+                                    
+                                }
+                                Button("Weekly") {
+                                    
+                                }
+                                Button("Biweekly") {
+                                    
+                                }
+                                Button("Monthly") {
+                                    
+                                }
+                                Button("3 Months") {
+                                    
+                                }
+                                Button("6 Months") {
+                                    
+                                }
+                                Button("All the time") {
+                                    
+                                }
+
+                                
+                                Section{
+                                    Button("Custom") {
+                                        
+                                    }
+                                }
+                            }
+//                            .foregroundColor(Color.blue)
+                            .presentationDetents([.large, .fraction(0.75)])
+//                            .background(Color.white)
                         }
                     }
                     .padding([.top, .leading, .trailing])
@@ -98,6 +130,7 @@ struct DashboardOverview: View {
                                               ,design: .default
                                              )
                                 )
+                                .foregroundColor(.white)
                                 .padding(.top, 18.0)
                                 .padding(.bottom, 0.000000005)
                             
@@ -107,7 +140,9 @@ struct DashboardOverview: View {
                                                   ,weight: .medium
                                                   ,design: .rounded
                                                  )
+                                          
                                     )
+                                    .foregroundColor(.white)
                                 
                                 Spacer()
                                 
@@ -117,6 +152,7 @@ struct DashboardOverview: View {
                                                   ,design: .rounded
                                                  )
                                     )
+                                    .foregroundColor(.white)
                             }
                             .padding(.trailing)
                             
@@ -127,7 +163,8 @@ struct DashboardOverview: View {
                         }
                         .padding(.leading, 25.0)
                         .padding(.trailing, 12.0)
-                        .background(Color.white)
+//                        .background(Color.CustomBlack)
+                        .background(Color.CustomDarkTeal)
                         .cornerRadius(8)
                         .frame(width: 342
                                ,height: 216
@@ -145,7 +182,7 @@ struct DashboardOverview: View {
                             .padding(.horizontal, 10.0)
                             .padding(.bottom, 16.0)
                     }
-                    .background(Color.gray)
+                    .background(Color.CustomLightTeal)
                     .cornerRadius(8)
                     .frame(width: 358
                            //                         ,height: 324
@@ -188,4 +225,13 @@ struct DashboardOverview: View {
         }
     }
     
+}
+
+extension Color {
+    static let CustomTeal = Color("CustomTeal")
+    static let CustomBlack = Color("CustomBlack")
+    static let CustomDarkTeal = Color("CustomDarkTeal")
+    static let CustomDarkTeal2 = Color("CustomDarkTeal2")
+    static let CustomLightTeal = Color("CustomLightTeal")
+    static let CustomOrange = Color("CustomOrange")
 }

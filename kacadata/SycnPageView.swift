@@ -43,6 +43,7 @@ struct SyncPageView: View {
                             .frame(width: 38,
                                    height: 38,
                                    alignment: .center)
+                            .foregroundColor(.CustomTeal)
                     }
                 }
                 .padding(EdgeInsets(top: 0,
@@ -65,12 +66,12 @@ struct SyncPageView: View {
                 NavigationLink(
                     destination: Text("This is page for MOKA Sync"),
                     label: {
-                        Text("Connect With MOKA")
+                        Text("Connect Using MOKA")
                             .frame(width: 358,
                                    height: 48,
                                    alignment: .center)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
+                            .background(Color.CustomTeal)
+                            .foregroundColor(.black)
                             .cornerRadius(8)
                             .font(.system(size: 14,
                                           weight: .semibold,
@@ -104,3 +105,12 @@ struct SyncPageView_Previews: PreviewProvider {
         SyncPageView()
     }
 }
+
+//extension Color {
+//    static let CustomTeal = Color("CustomTeal")
+//    static let CustomBlack = Color("CustomBlack")
+//    static let CustomDarkTeal = Color("CustomDarkTeal")
+//    static let CustomDarkTeal2 = Color("CustomDarkTeal2")
+//    static let CustomLightTeal = Color("CustomLightTeal")
+//    static let CustomOrange = Color("CustomOrange")
+//}
