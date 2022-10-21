@@ -19,6 +19,10 @@
 		49CB34F028F549DC00C8F656 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CB34EF28F549DC00C8F656 /* User.swift */; };
 		49CB34F228F54AB800C8F656 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CB34F128F54AB800C8F656 /* Business.swift */; };
 		49CB34F428F54B5200C8F656 /* Outlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CB34F328F54B5200C8F656 /* Outlet.swift */; };
+		581B86A52902812C00B58DBE /* DummySyncDataPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A42902812C00B58DBE /* DummySyncDataPage.swift */; };
+		581B86A72902814400B58DBE /* AllowSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A62902814400B58DBE /* AllowSync.swift */; };
+		581B86A92902815E00B58DBE /* DummyDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A82902815E00B58DBE /* DummyDashboard.swift */; };
+		581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86AA2902816C00B58DBE /* BundleSelection2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		49CB34EF28F549DC00C8F656 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		49CB34F128F54AB800C8F656 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		49CB34F328F54B5200C8F656 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
+		581B86A42902812C00B58DBE /* DummySyncDataPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummySyncDataPage.swift; sourceTree = "<group>"; };
+		581B86A62902814400B58DBE /* AllowSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowSync.swift; sourceTree = "<group>"; };
+		581B86A82902815E00B58DBE /* DummyDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDashboard.swift; sourceTree = "<group>"; };
+		581B86AA2902816C00B58DBE /* BundleSelection2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleSelection2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,10 @@
 				49AAA97628F5467400EDC09D /* Persistence.swift */,
 				49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */,
 				49AAA97328F5467400EDC09D /* Preview Content */,
+				581B86A42902812C00B58DBE /* DummySyncDataPage.swift */,
+				581B86A62902814400B58DBE /* AllowSync.swift */,
+				581B86A82902815E00B58DBE /* DummyDashboard.swift */,
+				581B86AA2902816C00B58DBE /* BundleSelection2.swift */,
 			);
 			path = kacadata;
 			sourceTree = "<group>";
@@ -170,10 +182,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CB34F428F54B5200C8F656 /* Outlet.swift in Sources */,
+				581B86A92902815E00B58DBE /* DummyDashboard.swift in Sources */,
 				496A6C9C28FD3562009A1C01 /* ItemSales.swift in Sources */,
+				581B86A52902812C00B58DBE /* DummySyncDataPage.swift in Sources */,
 				49AAA97728F5467400EDC09D /* Persistence.swift in Sources */,
 				49AAA97028F5467300EDC09D /* ContentView.swift in Sources */,
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
+				581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */,
+				581B86A72902814400B58DBE /* AllowSync.swift in Sources */,
 				49CB34F228F54AB800C8F656 /* Business.swift in Sources */,
 				49CB34F028F549DC00C8F656 /* User.swift in Sources */,
 				496A6CA028FD39BA009A1C01 /* Checkout.swift in Sources */,
