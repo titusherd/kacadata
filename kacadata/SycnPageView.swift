@@ -33,6 +33,7 @@ struct SyncPageView: View {
                                       weight: .bold,
                                       design: .rounded))
                         .multilineTextAlignment(.leading)
+                        .lineSpacing(0)
 
                     
                     NavigationLink {
@@ -57,6 +58,7 @@ struct SyncPageView: View {
                                   weight: .regular,
                                   design: .rounded))
                     .multilineTextAlignment(.leading)
+                    .lineSpacing(3)
                     .padding(EdgeInsets(top: 0,
                                         leading: -22,
                                         bottom: 20,

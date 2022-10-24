@@ -146,14 +146,36 @@ struct DashboardOverview: View {
                                 
                                 Spacer()
                                 
-                                (Text(up) + Text(" 5,5 %"))
-                                    .font(.system(size:18
-                                                  ,weight: .semibold
-                                                  ,design: .rounded
-                                                 )
-                                    )
-                                    .foregroundColor(.white)
-                                    .overlay(RoundedRectangle(cornerRadius:4, style: .continuous).stroke(Color.CustomTeal, lineWidth: 2))
+                                // MARK: Try1
+//                                RoundedRectangle(cornerRadius: 4, style: .continuous)
+//                                    .background(Color.CustomTeal)
+                                
+                                // MARK: Try2
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                        .foregroundColor(Color.CustomTeal)
+                                    (Text(up) + Text(" 5,5 %"))
+                                        .font(.system(size:18
+                                                      ,weight: .semibold
+                                                      ,design: .rounded
+                                                     )
+                                        )
+                                        .foregroundColor(.CustomBlack)
+                                        .padding(5)
+                                }
+                                
+                                // MARK: Try3
+//                                (Text(up) + Text(" 5,5 %"))
+//                                    .font(.system(size:18
+//                                                  ,weight: .semibold
+//                                                  ,design: .rounded
+//                                                 )
+//                                    )
+//                                    .background(Color.CustomTeal)
+//                                    .foregroundColor(.CustomBlack)
+//                                    .padding(5)
+//                                    .cornerRadius(14)
+                                
                             }
                             .padding(.trailing)
                             .padding(.bottom, 14.0)
