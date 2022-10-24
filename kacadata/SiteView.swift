@@ -21,14 +21,10 @@ extension Date{
 }
 
 var sample_analytics: [SiteView] = [
-    SiteView(hour: Date().updateHour(value: 8), views: 1500),
-    SiteView(hour: Date().updateHour(value: 9), views: 2625),
-    SiteView(hour: Date().updateHour(value: 8), views: 7500),
-    SiteView(hour: Date().updateHour(value: 8), views: 3688),
-    SiteView(hour: Date().updateHour(value: 8), views: 2988),
-    SiteView(hour: Date().updateHour(value: 8), views: 3289),
-    SiteView(hour: Date().updateHour(value: 8), views: 4500),
-    SiteView(hour: Date().updateHour(value: 8), views: 6788),
-    SiteView(hour: Date().updateHour(value: 8), views: 9988),
-    SiteView(hour: Date().updateHour(value: 8), views: 6500)
+    SiteView(hour: Date().updateHour(value: 8), views: 350),
+    SiteView(hour: Date().updateHour(value: 9), views: 400),
+    SiteView(hour: Date().updateHour(value: 9), views: 250),
+    SiteView(hour: Date().updateHour(value: 9), views: 250),
+    SiteView(hour: Date().updateHour(value: 8), views: 500),
+    SiteView(hour: Date().updateHour(value: 8), views: 550)
 ]

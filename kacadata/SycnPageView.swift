@@ -18,17 +18,17 @@ struct SyncPageView: View {
                 Image("Asset cable1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 358,
+                    .frame(width: 378,
                            height: 342,
                            alignment: .bottomLeading)
                     .padding(.bottom, 50.0)
-                    .padding(.leading, -32.0)
+                    .padding(.leading, -16.0)
                 
                 // MARK: - Text Section
                 
                 HStack{
 //                    (Text("Connecting Data \nWithin Our App ") + Text(image))
-                    Text("Connecting Data \nWithin Our App ")
+                    Text("Connecting Data \nWithin KacaData ")
                         .font(.system(size: 36,
                                       weight: .bold,
                                       design: .rounded))
@@ -41,25 +41,25 @@ struct SyncPageView: View {
                         Image(systemName: "questionmark.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 38,
-                                   height: 38,
+                            .frame(width: 26,
+                                   height: 26,
                                    alignment: .center)
                             .foregroundColor(.CustomTeal)
                     }
                 }
                 .padding(EdgeInsets(top: 0,
-                                    leading: -17,
+                                    leading: -27,
                                     bottom: 20,
                                     trailing: 0))
                 
-                Text("Connect your data and let our app do the rest. \nAlign your work, and recommend your promo in \naccurate.")
+                Text("Integrate your POS data and let us do the rest. \nfind the right marketing strategy for your \nbusiness based on your real data.")
                     .font(.system(size: 16,
                                   weight: .regular,
                                   design: .rounded))
                     .multilineTextAlignment(.leading)
                     .padding(EdgeInsets(top: 0,
-                                        leading: -17,
-                                        bottom: 32,
+                                        leading: -22,
+                                        bottom: 20,
                                         trailing: 0))
                 
                 // MARK: - Button Section
@@ -88,14 +88,15 @@ struct SyncPageView: View {
                             .frame(width: 358,
                                    height: 48,
                                    alignment: .center)
-                            .background(Color.gray)
-                            .foregroundColor(.white)
+                            .background(Color.white)
+                            .foregroundColor(.gray)
                             .cornerRadius(8)
                             .font(.system(size: 14,
                                           weight: .semibold,
                                           design: .rounded))
                     }
                 )
+                .overlay(RoundedRectangle(cornerRadius:8, style: .continuous).stroke(Color.gray, lineWidth: 2))
             }
         }
     }

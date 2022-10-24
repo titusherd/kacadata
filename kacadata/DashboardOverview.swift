@@ -208,11 +208,14 @@ struct DashboardOverview: View {
                 BarMark(
                     x: .value("Views", item.views),
                     y: .value("Hour", item.hour, unit: .hour)
+//                    y: .value("Hour", item.hour, unit: .hour)
                     
                 )
             }
         }
+        
         // MARK: Customizing Y-Axis Length
+        .foregroundColor(Color("CustomTeal"))
         .frame(
             //                width: 150,
             height: 140
