@@ -43,10 +43,10 @@ struct DashboardOverview: View {
                                           ,design: .rounded
                                          )
                             )
-                            .background(Color.gray)
-                            .foregroundColor(.white)
+                            .foregroundColor(.CustomDarkTeal2)
                             .cornerRadius(4)
-                    }
+                        }
+                        .overlay(RoundedRectangle(cornerRadius:4, style: .continuous).stroke(Color.CustomTeal, lineWidth: 2))
                         .sheet(isPresented: $showSheet) {
                             Text("Choose Period of Time")
                                 .font(.system(size:13
@@ -90,7 +90,7 @@ struct DashboardOverview: View {
                                 Button("All the time") {
                                     
                                 }
-
+                                
                                 
                                 Section{
                                     Button("Custom") {
@@ -98,9 +98,9 @@ struct DashboardOverview: View {
                                     }
                                 }
                             }
-//                            .foregroundColor(Color.blue)
+                            //                            .foregroundColor(Color.blue)
                             .presentationDetents([.large, .fraction(0.75)])
-//                            .background(Color.white)
+                            //                            .background(Color.white)
                         }
                     }
                     .padding([.top, .leading, .trailing])
@@ -153,6 +153,7 @@ struct DashboardOverview: View {
                                                  )
                                     )
                                     .foregroundColor(.white)
+                                    .overlay(RoundedRectangle(cornerRadius:4, style: .continuous).stroke(Color.CustomTeal, lineWidth: 2))
                             }
                             .padding(.trailing)
                             .padding(.bottom, 14.0)
@@ -164,7 +165,7 @@ struct DashboardOverview: View {
                         }
                         .padding(.leading, 25.0)
                         .padding(.trailing, 12.0)
-//                        .background(Color.CustomBlack)
+                        //                        .background(Color.CustomBlack)
                         .background(Color.CustomDarkTeal)
                         .cornerRadius(8)
                         .frame(width: 325
@@ -186,7 +187,7 @@ struct DashboardOverview: View {
                     .background(Color.CustomLightTeal)
                     .cornerRadius(8)
                     .frame(width: 358
-//                                                    ,height: 324
+                           //                                                    ,height: 324
                     )
                 }
                 .navigationTitle("Dashboard")
@@ -208,7 +209,7 @@ struct DashboardOverview: View {
                 BarMark(
                     x: .value("Views", item.views),
                     y: .value("Hour", item.hour, unit: .hour)
-//                    y: .value("Hour", item.hour, unit: .hour)
+                    //                    y: .value("Hour", item.hour, unit: .hour)
                     
                 )
             }
