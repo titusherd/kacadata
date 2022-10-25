@@ -13,9 +13,11 @@
 		49AAA97528F5467400EDC09D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AAA97428F5467400EDC09D /* Preview Assets.xcassets */; };
 		49AAA97728F5467400EDC09D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA97628F5467400EDC09D /* Persistence.swift */; };
 		49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */; };
+		F64AA2122907969900BD4D97 /* DashboardComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64AA2112907969900BD4D97 /* DashboardComparison.swift */; };
 		F653495928FE9E6600C1E9DD /* SycnPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653495828FE9E6600C1E9DD /* SycnPageView.swift */; };
 		F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */; };
 		F66665B429012A340083E6B8 /* SiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B329012A340083E6B8 /* SiteView.swift */; };
+		F66E42C12907D028007D5935 /* ComparisonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E42C02907D028007D5935 /* ComparisonDetail.swift */; };
 		F6C45F3C29064325009263EA /* DummyDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C45F3B29064325009263EA /* DummyDashboard.swift */; };
 		F6C45F3E29064340009263EA /* BundleSelection2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C45F3D29064340009263EA /* BundleSelection2.swift */; };
 /* End PBXBuildFile section */
@@ -28,9 +30,11 @@
 		49AAA97428F5467400EDC09D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49AAA97628F5467400EDC09D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		49AAA97928F5467400EDC09D /* kacadata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kacadata.xcdatamodel; sourceTree = "<group>"; };
+		F64AA2112907969900BD4D97 /* DashboardComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComparison.swift; sourceTree = "<group>"; };
 		F653495828FE9E6600C1E9DD /* SycnPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SycnPageView.swift; sourceTree = "<group>"; };
 		F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOverview.swift; sourceTree = "<group>"; };
 		F66665B329012A340083E6B8 /* SiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteView.swift; sourceTree = "<group>"; };
+		F66E42C02907D028007D5935 /* ComparisonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonDetail.swift; sourceTree = "<group>"; };
 		F6C45F3B29064325009263EA /* DummyDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyDashboard.swift; sourceTree = "<group>"; };
 		F6C45F3D29064340009263EA /* BundleSelection2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleSelection2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +73,8 @@
 				49AAA96F28F5467300EDC09D /* ContentView.swift */,
 				F653495828FE9E6600C1E9DD /* SycnPageView.swift */,
 				F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */,
+				F64AA2112907969900BD4D97 /* DashboardComparison.swift */,
+				F66E42C02907D028007D5935 /* ComparisonDetail.swift */,
 				49AAA97128F5467400EDC09D /* Assets.xcassets */,
 				49AAA97628F5467400EDC09D /* Persistence.swift */,
 				49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */,
@@ -159,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49AAA97728F5467400EDC09D /* Persistence.swift in Sources */,
+				F64AA2122907969900BD4D97 /* DashboardComparison.swift in Sources */,
 				F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */,
 				F66665B429012A340083E6B8 /* SiteView.swift in Sources */,
 				F6C45F3C29064325009263EA /* DummyDashboard.swift in Sources */,
@@ -167,6 +174,7 @@
 				F6C45F3E29064340009263EA /* BundleSelection2.swift in Sources */,
 				49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */,
 				F653495928FE9E6600C1E9DD /* SycnPageView.swift in Sources */,
+				F66E42C12907D028007D5935 /* ComparisonDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

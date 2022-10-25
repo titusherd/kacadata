@@ -13,7 +13,7 @@ struct DashboardOverview: View {
     let up = Image(systemName: "arrow.up")
     let down = Image(systemName: "arrow.down")
     
-    @State var sampleAnalytics: [SiteView] = sample_analytics
+    @State private var sampleAnalytics: [SiteView] = sample_analytics
     @State private var showSheet: Bool = false
     
     var body: some View {
@@ -151,30 +151,30 @@ struct DashboardOverview: View {
 //                                    .background(Color.CustomTeal)
                                 
                                 // MARK: Try2
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 4, style: .continuous)
-                                        .foregroundColor(Color.CustomTeal)
-                                    (Text(up) + Text(" 5,5 %"))
-                                        .font(.system(size:18
-                                                      ,weight: .semibold
-                                                      ,design: .rounded
-                                                     )
-                                        )
-                                        .foregroundColor(.CustomBlack)
-                                        .padding(5)
-                                }
+//                                ZStack {
+//                                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+//                                        .foregroundColor(Color.CustomTeal)
+//                                    (Text(up) + Text(" 5,5 %"))
+//                                        .font(.system(size:18
+//                                                      ,weight: .semibold
+//                                                      ,design: .rounded
+//                                                     )
+//                                        )
+//                                        .foregroundColor(.CustomBlack)
+//                                        .padding(5)
+//                                }
                                 
                                 // MARK: Try3
-//                                (Text(up) + Text(" 5,5 %"))
-//                                    .font(.system(size:18
-//                                                  ,weight: .semibold
-//                                                  ,design: .rounded
-//                                                 )
-//                                    )
-//                                    .background(Color.CustomTeal)
-//                                    .foregroundColor(.CustomBlack)
-//                                    .padding(5)
-//                                    .cornerRadius(14)
+                                (Text(up) + Text(" 5,5 %"))
+                                    .font(.system(size:18
+                                                  ,weight: .semibold
+                                                  ,design: .rounded
+                                                 )
+                                    )
+                                    .background(Color.CustomTeal)
+                                    .foregroundColor(.CustomBlack)
+                                    .padding(5)
+                                    .cornerRadius(14)
                                 
                             }
                             .padding(.trailing)
