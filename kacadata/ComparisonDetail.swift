@@ -48,7 +48,7 @@ struct ComparisonDetail: View {
                         }
                         .padding([.top, .leading, .trailing])
                         
-                        // MARK: - Income Card
+                        // MARK: - Bundling Item
                         VStack(alignment: .leading){
                             Text("Bundling Item")
                                 .font(.system(size:12
@@ -76,7 +76,7 @@ struct ComparisonDetail: View {
                         
                         Spacer()
                         
-                        // MARK: - Income Card
+                        // MARK: - Single Item
                         VStack(alignment: .leading){
                             Text("Single Item")
                                 .font(.system(size:12
@@ -139,108 +139,6 @@ struct ComparisonDetail: View {
                 }
                 .navigationTitle("Dashboard")
                 .navigationBarHidden(true)
-                
-                // MARK: - Dashboard Overview
-                
-                VStack{
-                    VStack(alignment: .center){
-                        // MARK: - Overview Card
-                        HStack(spacing: 5){
-                            Text("| Overview")
-                                .font(.system(size:16,
-                                              weight: .semibold,
-                                              design: .rounded
-                                             )
-                                )
-                                .multilineTextAlignment(.leading)
-                            
-                            Spacer()
-                        }
-                        .padding([.top, .leading, .trailing])
-                        .padding(.bottom, 20.0)
-                        
-                        // MARK: - Summary Word Card
-                        
-                        Text("Based on the sales in this month. The product sold and gained 495 million an **increase 5.5%** than last month.")
-                            .font(.system(size:11
-                                          ,weight: .regular
-                                          ,design: .rounded
-                                         )
-                            )
-                            .padding(.top, 18.0)
-                            .padding(.horizontal, 10.0)
-                            .padding(.bottom, 16.0)
-                    }
-                    .background(Color.CustomLightTeal)
-                    .cornerRadius(8)
-                    .frame(width: 358
-                           //                                                    ,height: 324
-                    )
-                }
-                .padding(.top, 5.0)
-                
-                // MARK: - Dashboard Overview
-                
-                VStack{
-                    VStack(alignment: .center){
-                        // MARK: - Overview Card
-                        HStack(spacing: 5){
-                            Text("| Ongoing Bundling")
-                                .font(.system(size:16,
-                                              weight: .semibold,
-                                              design: .rounded
-                                             )
-                                )
-                                .multilineTextAlignment(.leading)
-                            
-                            Spacer()
-                        }
-                        .padding([.top, .leading, .trailing])
-                        
-                        // MARK: - Summary Word Card
-                        
-                        (Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id tincidunt neque, quis tempor urna.  Praesent eget metus sapien. Aenean ac tortor ac tellus rutrum sollicitudin. ")
-                         +
-                         Text("**Ayam Bakar Taliwang**")
-                            .underline()
-                         +
-                         Text(" felis, accumsan at neque vehicula, auctor vehicula libero. Donec facilisis sem nec orci ")
-                         +
-                         Text("**Kue Putu**")
-                            .underline()
-                         +
-                         Text(" ornare."))
-                        .font(.system(size:11
-                                      ,weight: .regular
-                                      ,design: .rounded
-                                     )
-                        )
-                        .padding(.top, 1.0)
-                        .padding(.horizontal, 16.0)
-                        .padding(.bottom, 6)
-                        
-                        NavigationLink(destination: Text("This is page for MOKA Sync"), label: {
-                            Text("Change Your Schedule")
-                                .frame(width: 326,
-                                       height: 48,
-                                       alignment: .center)
-                                .background(Color.CustomTeal)
-                                .foregroundColor(.black)
-                                .cornerRadius(8)
-                                .font(.system(size: 14,
-                                              weight: .semibold,
-                                              design: .rounded))
-                        }
-                        )
-                        .padding(.bottom)
-                    }
-                    .background(Color.CustomLightTeal)
-                    .cornerRadius(8)
-                    .frame(width: 358
-                           //                                                    ,height: 324
-                    )
-                }
-                .padding(.top, 5.0)
                 
             }
         }
