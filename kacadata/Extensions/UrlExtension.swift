@@ -39,7 +39,9 @@ extension URL {
     }
     private static let byteCountFormatter = ByteCountFormatter()
 }
+
 extension URL {
+    
     func byteCount(size: Double) -> String? {
         URL.byteCountFormatter.countStyle = .file
         guard let byteCount = URL.byteCountFormatter.string(for: size) else { print("conv");return nil}
@@ -57,6 +59,7 @@ extension URL {
         let value = try? resourceValues(forKeys: [.fileSizeKey])
         return value?.fileSize
     }
+    
     var fileMBSize: Double {
         let filePath = self.path
            do {
