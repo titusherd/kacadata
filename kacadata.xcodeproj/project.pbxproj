@@ -96,6 +96,10 @@
 		496A6CA128FE705B009A1C01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				581B86A42902812C00B58DBE /* DummySyncDataPage.swift */,
+				581B86A62902814400B58DBE /* AllowSync.swift */,
+				581B86A82902815E00B58DBE /* DummyDashboard.swift */,
+				581B86AA2902816C00B58DBE /* BundleSelection2.swift */,
 				49AAA96F28F5467300EDC09D /* ContentView.swift */,
 				496A6CA228FE7382009A1C01 /* DocumentPickerView.swift */,
 			);
@@ -151,10 +155,6 @@
 				49AAA97628F5467400EDC09D /* Persistence.swift */,
 				49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */,
 				49AAA97328F5467400EDC09D /* Preview Content */,
-				581B86A42902812C00B58DBE /* DummySyncDataPage.swift */,
-				581B86A62902814400B58DBE /* AllowSync.swift */,
-				581B86A82902815E00B58DBE /* DummyDashboard.swift */,
-				581B86AA2902816C00B58DBE /* BundleSelection2.swift */,
 			);
 			path = kacadata;
 			sourceTree = "<group>";
