@@ -106,6 +106,11 @@
 		496A6CA128FE705B009A1C01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F66665B329012A340083E6B8 /* SiteView.swift */,
+				F653495828FE9E6600C1E9DD /* SycnPageView.swift */,
+				F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */,
+				F64AA2112907969900BD4D97 /* DashboardComparison.swift */,
+				F66E42C02907D028007D5935 /* ComparisonDetail.swift */,
 				581B86A42902812C00B58DBE /* DummySyncDataPage.swift */,
 				581B86A62902814400B58DBE /* AllowSync.swift */,
 				581B86A82902815E00B58DBE /* DummyDashboard.swift */,
@@ -161,15 +166,10 @@
 				49CB34EE28F5499400C8F656 /* Model */,
 				496A6CA728FE7401009A1C01 /* Handlers */,
 				49AAA96D28F5467300EDC09D /* kacadataApp.swift */,
-				F653495828FE9E6600C1E9DD /* SycnPageView.swift */,
-				F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */,
-				F64AA2112907969900BD4D97 /* DashboardComparison.swift */,
-				F66E42C02907D028007D5935 /* ComparisonDetail.swift */,
 				49AAA97128F5467400EDC09D /* Assets.xcassets */,
 				49AAA97628F5467400EDC09D /* Persistence.swift */,
 				49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */,
 				49AAA97328F5467400EDC09D /* Preview Content */,
-				F66665B329012A340083E6B8 /* SiteView.swift */,
 			);
 			path = kacadata;
 			sourceTree = "<group>";
