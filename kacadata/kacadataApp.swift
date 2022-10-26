@@ -13,7 +13,7 @@ struct kacadataApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ExampleView(homeVM: HomeViewModel())
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
