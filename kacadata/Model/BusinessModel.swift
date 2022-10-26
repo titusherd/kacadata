@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Business: Codable {
+struct BusinessModel: Codable {
     var id: Int
     var name: String
     var address: String?

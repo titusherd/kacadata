@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ItemSales: Codable {
+struct ItemSalesModel: Codable {
     var name: String
     var sku: String
     var categoryName: String

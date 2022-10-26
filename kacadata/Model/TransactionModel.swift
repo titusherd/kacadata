@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Transaction: Codable {
+struct TransactionModel: Codable {
     var id: String
     var paymentNo: String
     var createdAt: String
@@ -27,7 +27,7 @@ struct Transaction: Codable {
     var transactionTime: String
     var collectedBy: String
     var outletId: Int
-    var checkouts: [Checkout]
+    var checkouts: [CheckoutModel]
     
     enum CodingKeys: String, CodingKey {
         case id

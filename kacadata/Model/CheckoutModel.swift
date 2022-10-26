@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Checkout: Codable {
+struct CheckoutModel: Codable {
     var id: Int
     var createdAt: String
     var updatedAt: String

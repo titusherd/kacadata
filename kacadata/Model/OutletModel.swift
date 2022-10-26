@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Outlet: Codable {
+struct OutletModel: Codable {
     var id: Int
     var name: String
     var address: String?
