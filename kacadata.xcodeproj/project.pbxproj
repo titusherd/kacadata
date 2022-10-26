@@ -41,6 +41,11 @@
 		581B86A72902814400B58DBE /* AllowSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A62902814400B58DBE /* AllowSync.swift */; };
 		581B86A92902815E00B58DBE /* DummyDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A82902815E00B58DBE /* DummyDashboard.swift */; };
 		581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86AA2902816C00B58DBE /* BundleSelection2.swift */; };
+		F64AA2122907969900BD4D97 /* DashboardComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64AA2112907969900BD4D97 /* DashboardComparison.swift */; };
+		F653495928FE9E6600C1E9DD /* SycnPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653495828FE9E6600C1E9DD /* SycnPageView.swift */; };
+		F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */; };
+		F66665B429012A340083E6B8 /* SiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B329012A340083E6B8 /* SiteView.swift */; };
+		F66E42C12907D028007D5935 /* ComparisonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E42C02907D028007D5935 /* ComparisonDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +85,11 @@
 		581B86A62902814400B58DBE /* AllowSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowSync.swift; sourceTree = "<group>"; };
 		581B86A82902815E00B58DBE /* DummyDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDashboard.swift; sourceTree = "<group>"; };
 		581B86AA2902816C00B58DBE /* BundleSelection2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleSelection2.swift; sourceTree = "<group>"; };
+		F64AA2112907969900BD4D97 /* DashboardComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComparison.swift; sourceTree = "<group>"; };
+		F653495828FE9E6600C1E9DD /* SycnPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SycnPageView.swift; sourceTree = "<group>"; };
+		F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOverview.swift; sourceTree = "<group>"; };
+		F66665B329012A340083E6B8 /* SiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteView.swift; sourceTree = "<group>"; };
+		F66E42C02907D028007D5935 /* ComparisonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,11 @@
 		496A6CA128FE705B009A1C01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F66665B329012A340083E6B8 /* SiteView.swift */,
+				F653495828FE9E6600C1E9DD /* SycnPageView.swift */,
+				F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */,
+				F64AA2112907969900BD4D97 /* DashboardComparison.swift */,
+				F66E42C02907D028007D5935 /* ComparisonDetail.swift */,
 				581B86A42902812C00B58DBE /* DummySyncDataPage.swift */,
 				581B86A62902814400B58DBE /* AllowSync.swift */,
 				581B86A82902815E00B58DBE /* DummyDashboard.swift */,
@@ -293,6 +308,9 @@
 				496A6CA328FE7382009A1C01 /* DocumentPickerView.swift in Sources */,
 				496A6C9C28FD3562009A1C01 /* ItemSalesModel.swift in Sources */,
 				49AAA97728F5467400EDC09D /* Persistence.swift in Sources */,
+				F64AA2122907969900BD4D97 /* DashboardComparison.swift in Sources */,
+				F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */,
+				F66665B429012A340083E6B8 /* SiteView.swift in Sources */,
 				49AAA97028F5467300EDC09D /* ContentView.swift in Sources */,
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
 				581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */,
@@ -309,6 +327,8 @@
 				49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */,
 				496A6C9E28FD36ED009A1C01 /* TransactionModel.swift in Sources */,
 				49FC4A7F28FFA6D6009A85BC /* ColorExtension.swift in Sources */,
+				F653495928FE9E6600C1E9DD /* SycnPageView.swift in Sources */,
+				F66E42C12907D028007D5935 /* ComparisonDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kacadata/Preview Content\"";
-				DEVELOPMENT_TEAM = 4NQ864VCNU;
+				DEVELOPMENT_TEAM = 6XZALBLLVJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kacadata/Info.plist;
@@ -467,7 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kacadata/Preview Content\"";
-				DEVELOPMENT_TEAM = 4NQ864VCNU;
+				DEVELOPMENT_TEAM = 6XZALBLLVJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kacadata/Info.plist;
