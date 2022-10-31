@@ -77,3 +77,11 @@ extension URL {
         return value?.fileSize
     }
 }
+
+//.appendingPathComponent(subfolder,isDirectory: true)
+extension URL {
+    func fileExists() -> Bool {
+        let p = self.path.replacingOccurrences(of: "file://", with: "")
+        return FileManager.default.fileExists(atPath: p)
+    }
+}
