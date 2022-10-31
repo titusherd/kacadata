@@ -41,6 +41,9 @@
 		581B86A72902814400B58DBE /* AllowSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A62902814400B58DBE /* AllowSync.swift */; };
 		581B86A92902815E00B58DBE /* DummyDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A82902815E00B58DBE /* DummyDashboard.swift */; };
 		581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86AA2902816C00B58DBE /* BundleSelection2.swift */; };
+		75017975290F2AE800A01BAF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75017974290F2AE800A01BAF /* NetworkManager.swift */; };
+		7546E8FE290B4A33009B48F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7546E8FD290B4A33009B48F7 /* Alamofire */; };
+		8BA36F99D652D23761BDB8BE /* Pods_kacadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD30DC838904B10400E13E72 /* Pods_kacadata.framework */; };
 		F64AA2122907969900BD4D97 /* DashboardComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64AA2112907969900BD4D97 /* DashboardComparison.swift */; };
 		F653495928FE9E6600C1E9DD /* SycnPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653495828FE9E6600C1E9DD /* SycnPageView.swift */; };
 		F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */; };
@@ -85,6 +88,10 @@
 		581B86A62902814400B58DBE /* AllowSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowSync.swift; sourceTree = "<group>"; };
 		581B86A82902815E00B58DBE /* DummyDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDashboard.swift; sourceTree = "<group>"; };
 		581B86AA2902816C00B58DBE /* BundleSelection2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleSelection2.swift; sourceTree = "<group>"; };
+		6A8B4990CCB45D2F557C7973 /* Pods-kacadata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kacadata.release.xcconfig"; path = "Target Support Files/Pods-kacadata/Pods-kacadata.release.xcconfig"; sourceTree = "<group>"; };
+		75017974290F2AE800A01BAF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AD30DC838904B10400E13E72 /* Pods_kacadata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kacadata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B0C25E2FFF847FEE22103F /* Pods-kacadata.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kacadata.debug.xcconfig"; path = "Target Support Files/Pods-kacadata/Pods-kacadata.debug.xcconfig"; sourceTree = "<group>"; };
 		F64AA2112907969900BD4D97 /* DashboardComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComparison.swift; sourceTree = "<group>"; };
 		F653495828FE9E6600C1E9DD /* SycnPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SycnPageView.swift; sourceTree = "<group>"; };
 		F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOverview.swift; sourceTree = "<group>"; };
@@ -97,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA36F99D652D23761BDB8BE /* Pods_kacadata.framework in Frameworks */,
+				7546E8FE290B4A33009B48F7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +153,8 @@
 			children = (
 				49AAA96C28F5467300EDC09D /* kacadata */,
 				49AAA96B28F5467300EDC09D /* Products */,
+				C4B024F34B0B4B502A002A85 /* Pods */,
+				BF985B8E785556FA42B4F451 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +171,7 @@
 			children = (
 				49FC4A952907C98C009A85BC /* Info.plist */,
 				49FC4A822907C81D009A85BC /* Fonts */,
+				7546E8FF290B4AF6009B48F7 /* Networking */,
 				49FC4A7528FE8E0C009A85BC /* Extensions */,
 				496A6CA428FE73D2009A1C01 /* ViewModels */,
 				496A6CA128FE705B009A1C01 /* Views */,
@@ -222,6 +234,31 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		7546E8FF290B4AF6009B48F7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				75017974290F2AE800A01BAF /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BF985B8E785556FA42B4F451 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD30DC838904B10400E13E72 /* Pods_kacadata.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4B024F34B0B4B502A002A85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5B0C25E2FFF847FEE22103F /* Pods-kacadata.debug.xcconfig */,
+				6A8B4990CCB45D2F557C7973 /* Pods-kacadata.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,15 +266,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49AAA97D28F5467400EDC09D /* Build configuration list for PBXNativeTarget "kacadata" */;
 			buildPhases = (
+				EAC80925EFEBB61225F1BE90 /* [CP] Check Pods Manifest.lock */,
 				49AAA96628F5467300EDC09D /* Sources */,
 				49AAA96728F5467300EDC09D /* Frameworks */,
 				49AAA96828F5467300EDC09D /* Resources */,
+				E39376A53DEECEBFF346106D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = kacadata;
+			packageProductDependencies = (
+				7546E8FD290B4A33009B48F7 /* Alamofire */,
+			);
 			productName = kacadata;
 			productReference = 49AAA96A28F5467300EDC09D /* kacadata.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +308,9 @@
 				Base,
 			);
 			mainGroup = 49AAA96128F5467300EDC09D;
+			packageReferences = (
+				7546E8FC290B4A33009B48F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 49AAA96B28F5467300EDC09D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,6 +341,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E39376A53DEECEBFF346106D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kacadata/Pods-kacadata-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kacadata/Pods-kacadata-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kacadata/Pods-kacadata-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAC80925EFEBB61225F1BE90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kacadata-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49AAA96628F5467300EDC09D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -315,6 +402,7 @@
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
 				581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */,
 				581B86A72902814400B58DBE /* AllowSync.swift in Sources */,
+				75017975290F2AE800A01BAF /* NetworkManager.swift in Sources */,
 				49FC4A7728FE8E18009A85BC /* UrlExtension.swift in Sources */,
 				49CB34F228F54AB800C8F656 /* BusinessModel.swift in Sources */,
 				49FC4A8128FFA70F009A85BC /* FontExtension.swift in Sources */,
@@ -451,6 +539,7 @@
 		};
 		49AAA97E28F5467400EDC09D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5B0C25E2FFF847FEE22103F /* Pods-kacadata.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -481,6 +570,7 @@
 		};
 		49AAA97F28F5467400EDC09D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A8B4990CCB45D2F557C7973 /* Pods-kacadata.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7546E8FC290B4A33009B48F7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7546E8FD290B4A33009B48F7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7546E8FC290B4A33009B48F7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		49AAA97828F5467400EDC09D /* kacadata.xcdatamodeld */ = {
