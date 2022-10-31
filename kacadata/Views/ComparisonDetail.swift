@@ -8,6 +8,28 @@
 import SwiftUI
 import Charts
 
+struct CustomDivider: View {
+
+    let horizontalPadding: CGFloat
+    let color: Color
+
+    init( horizontalPadding: CGFloat = 15, color: Color = .white) {
+        self.horizontalPadding = horizontalPadding
+        self.color = color
+    }
+
+    var body: some View {
+        HStack {
+            line
+        }
+    }
+
+    var line: some View {
+        VStack { Divider().background(color) }.padding(.trailing)
+    }
+}
+
+
 struct ComparisonDetail: View {
     let image = Image(systemName: "chevron.down")
     let right = Image(systemName: "arrow.right")
@@ -52,8 +74,7 @@ struct ComparisonDetail: View {
                                              )
                                 )
                                 .foregroundColor(.white)
-                                .padding(.top, 14.0)
-//                                .padding(.bottom, 0.000000005)
+                                .padding(.top, 18.0)
                             
                             Text("Sold 50 Bundle")
                                 .font(.system(size:24
@@ -74,7 +95,7 @@ struct ComparisonDetail: View {
                                 )
                                 .foregroundColor(.white)
                                 .padding(.top, 4.0)
-                                .padding(.bottom, 14.0)
+                                .padding(.bottom, 18.0)
                             
                         }
                         .padding(.leading, 25.0)
@@ -96,7 +117,7 @@ struct ComparisonDetail: View {
                                              )
                                 )
                                 .foregroundColor(.white)
-                                .padding(.top, 14.0)
+                                .padding(.top, 18.0)
                                 .padding(.bottom, 0.000000005)
                             
                             HStack{
@@ -125,7 +146,8 @@ struct ComparisonDetail: View {
                                 
                             }
                             .padding(.trailing)
-                            .padding(.bottom, 14.0)
+                            
+                            CustomDivider()
                             
                             HStack{
                                 Text("Kue Putu")
@@ -155,29 +177,11 @@ struct ComparisonDetail: View {
                             .padding(.trailing)
                             .padding(.bottom, 14.0)
                             
-                            AnimatedChart()
+                            AnimatedDoubleChart()
                                 .padding([.top, .trailing], 10.0)
                                 .padding(.bottom, 20.0)
                             
-                            (Text("You’ve scheduled to create bundle package for item \n")
-                            +
-                            Text("**Ayam Bakar Taliwang**")
-                                .underline()
-                            +
-                            Text(" and ")
-                            +
-                            Text("**Kue Putu**")
-                                .underline()
-                            +
-                            Text(" for 30 days start from \n")
-                            +
-                            Text("**21 October 2022**")
-                                .underline()
-                            +
-                            Text(" until ")
-                            +
-                             Text("**20 November 2022**")
-                                 .underline())
+                            Text("Based on the single item sold. The product **ayam bakar taliwang** 95 item an **increase 10.5%** than without bundle recommended. The product **kue putu**  95 item  an **increase 8.5%** than without bundle recommended.")
                                 .font(.system(size:11
                                               ,weight: .regular
                                               ,design: .rounded
@@ -185,7 +189,7 @@ struct ComparisonDetail: View {
                                 )
                                 .foregroundColor(.white)
                                 .padding(.trailing, 8.0)
-                                .padding(.bottom, 16.0)
+                                .padding(.bottom, 8.0)
                             
                         }
                         .padding(.bottom, 14.0)
@@ -210,7 +214,6 @@ struct ComparisonDetail: View {
                                 )
                                 .foregroundColor(.white)
                                 .padding(.top, 18.0)
-                                .padding(.bottom, 0.000000005)
                             
                             HStack{
                                 Text("Rp495.000.000,00")
@@ -225,6 +228,7 @@ struct ComparisonDetail: View {
                             }
                             .padding(.trailing)
                             .padding(.bottom, 14.0)
+                            .padding(.top, 1.0)
                             
                             AnimatedChart()
                                 .padding(.trailing, 5.0)
@@ -289,6 +293,42 @@ struct ComparisonDetail: View {
             height: 140
         )
     }
+    
+    @ViewBuilder
+    func AnimatedDoubleChart()->some View{
+        let max = sampleAnalytics.max { item1, item2 in
+            return item2.views > item1.views
+        }?.views ?? 0
+        
+        Chart{
+            ForEach(sampleAnalytics){item in
+                // MARK: Bar Graph
+                BarMark(
+                    x: .value("Views", item.views),
+                    y: .value("Hour", item.hour, unit: .hour)
+                    //                    y: .value("Hour", item.hour, unit: .hour)
+                    
+                )
+            }
+            ForEach(sampleAnalytics){item in
+                // MARK: Bar Graph
+                BarMark(
+                    x: .value("Views", item.views),
+                    y: .value("Hour", item.hour, unit: .hour)
+                    //                    y: .value("Hour", item.hour, unit: .hour)
+                    
+                )
+            }
+        }
+        
+        // MARK: Customizing Y-Axis Length
+        .foregroundColor(Color("CustomTeal"))
+        .frame(
+            //                width: 150,
+            height: 140
+        )
+    }
+    
     struct ComparisonDetail_Previews: PreviewProvider {
         static var previews: some View {
             ComparisonDetail()

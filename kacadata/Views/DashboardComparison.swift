@@ -8,6 +8,39 @@
 import SwiftUI
 import Charts
 
+struct BundleRecommendation: Identifiable{
+    
+    let week: String
+    let sales: Int
+    var id: String {week}
+}
+
+let sales : [BundleRecommendation] = [
+    .init(week: "Week 1", sales: 170),
+    .init(week: "Week 2", sales: 190),
+    .init(week: "Week 3", sales: 240),
+    .init(week: "Week 4", sales: 210),
+]
+
+//Week 1 170, 170
+//Week 2 190, 140
+//Week 3 240, 160
+//Week 4 210, 150
+
+struct WithoutBundleRecommendation: Identifiable{
+    
+    let week2: String
+    let sales2: Int
+    var id: String {week2}
+}
+
+let sales2 : [WithoutBundleRecommendation] = [
+    .init(week2: "Week 1", sales2: 170),
+    .init(week2: "Week 2", sales2: 140),
+    .init(week2: "Week 3", sales2: 160),
+    .init(week2: "Week 4", sales2: 150),
+]
+
 struct DashboardComparison: View {
     let image = Image(systemName: "chevron.down")
     let right = Image(systemName: "arrow.right")
@@ -33,10 +66,9 @@ struct DashboardComparison: View {
                         Spacer()
                     }
                     .padding([.top, .leading, .trailing])
-                    .padding(.bottom, 25.0)
                     
                     VStack(alignment: .center){
-                        // MARK: - Overview Card
+                        // MARK: Comparison Card
                         HStack(spacing: 5){
                             Text("| Comparison")
                                 .font(.system(size:16,
@@ -50,9 +82,8 @@ struct DashboardComparison: View {
                         }
                         .padding([.top, .leading, .trailing])
                         
-                        // MARK: - Income Card
                         VStack(alignment: .leading){
-                            AnimatedLineChart()
+                            AnimatedComparationLineChart()
                                 .padding([.top, .trailing], 5.0)
                                 .padding(.vertical, 20.0)
                             
@@ -65,18 +96,19 @@ struct DashboardComparison: View {
                         .frame(width: 326
                                ,height: 190
                                ,alignment: .center)
+                        .shadow(radius: 3)
                         
-                        // MARK: - Summary Word Card
+                        // MARK: Summary Word Card
                         
                         HStack{
-                            Text("Based on the sales in this month. The product sold and gained 495 million an **increase 15%** than last month.")
+                            Text("Based on the sales in October, with Bundle Rec. the income sold 160 items, an **increase 15%** than September without Bundle Rec.")
                                 .font(.system(size:11
                                               ,weight: .regular
                                               ,design: .rounded
                                              )
                                 )
-                                .padding(.top, 18.0)
-                                .padding(.leading, 13.0)
+                                .padding(.top, 4.0)
+                                .padding(.leading, 17.0)
                                 .padding(.bottom, 16.0)
                             
                             NavigationLink(destination: ComparisonDetail()){
@@ -98,7 +130,6 @@ struct DashboardComparison: View {
                     .background(Color.CustomLightTeal)
                     .cornerRadius(8)
                     .frame(width: 358
-                           //                           ,height: 326
                     )
                 }
                 .navigationTitle("Result")
@@ -175,6 +206,8 @@ struct DashboardComparison: View {
                         .frame(width: 325
                                ,height: 216
                                ,alignment: .center)
+                        .shadow(radius: 3)
+
                         
                         // MARK: - Summary Word Card
                         
@@ -191,8 +224,8 @@ struct DashboardComparison: View {
                     .background(Color.CustomLightTeal)
                     .cornerRadius(8)
                     .frame(width: 358
-                           //                                                    ,height: 324
                     )
+                    
                 }
                 .padding(.top, 5.0)
                 
@@ -262,7 +295,6 @@ struct DashboardComparison: View {
                     .background(Color.CustomLightTeal)
                     .cornerRadius(8)
                     .frame(width: 358
-                           //                                                    ,height: 324
                     )
                 }
                 .padding(.top, 5.0)
@@ -284,8 +316,6 @@ struct DashboardComparison: View {
                 BarMark(
                     x: .value("Views", item.views),
                     y: .value("Hour", item.hour, unit: .hour)
-                    //                    y: .value("Hour", item.hour, unit: .hour)
-                    
                 )
             }
         }
@@ -293,11 +323,11 @@ struct DashboardComparison: View {
         // MARK: Customizing Y-Axis Length
         .foregroundColor(Color("CustomTeal"))
         .frame(
-            //                width: 150,
             height: 140
         )
     }
     
+    // MARK: - Comparison Analytics Function
     @ViewBuilder
     func AnimatedLineChart()->some View{
         let max = sampleAnalytics.max { item1, item2 in
@@ -310,18 +340,15 @@ struct DashboardComparison: View {
                 LineMark(
                     x: .value("Hour", item.hour, unit: .hour),
                     y: .value("Views", item.views)
-                    //                    y: .value("Hour", item.hour, unit: .hour)
-                    
                 )
                 .interpolationMethod(.catmullRom)
+//                .foregroundStyle(by: .value((), ))
             }
             ForEach(sampleAnalytics){item in
                 // MARK: Bar Graph
                 LineMark(
                     x: .value("Hour", item.hour, unit: .hour),
                     y: .value("Views", item.views)
-                    //                    y: .value("Hour", item.hour, unit: .hour)
-                    
                 )
                 .interpolationMethod(.catmullRom)
             }
@@ -330,7 +357,35 @@ struct DashboardComparison: View {
         // MARK: Customizing Y-Axis Length
         .foregroundColor(Color("CustomTeal"))
         .frame(
-            //                width: 150,
+            height: 140
+        )
+    }
+    
+    // MARK: - Comparison Analytics 2 Function
+    @ViewBuilder
+    func AnimatedComparationLineChart()->some View{
+        
+        Chart{
+            ForEach(sales){i in
+                LineMark(
+                    x: .value("week", i.week),
+                    y: .value("sales", i.sales)
+                )
+                .interpolationMethod(.catmullRom)
+//                .foregroundStyle(by: .value((), ))
+            }
+            ForEach(sales2){i in
+                LineMark(
+                    x: .value("week2", i.week2),
+                    y: .value("sales2", i.sales2)
+                )
+                .interpolationMethod(.catmullRom)
+            }
+        }
+        
+        // MARK: Customizing Y-Axis Length
+        .foregroundColor(Color("CustomTeal"))
+        .frame(
             height: 140
         )
     }
