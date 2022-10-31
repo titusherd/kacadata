@@ -89,7 +89,7 @@ struct ComparisonDetail: View {
                             
                             Text("Based on the sales in this week. you've sold **50 bundle!**")
                                 .font(.system(size:12
-                                              ,weight: .medium
+                                              ,weight: .regular
                                               ,design: .default
                                              )
                                 )
@@ -105,7 +105,7 @@ struct ComparisonDetail: View {
                         .cornerRadius(8)
                         .frame(alignment: .center)
                     }
-                    .padding(.bottom, 4.0)
+                    .padding(.bottom, 7.0)
                     
                     // MARK: - Single Item
                     VStack{
@@ -200,7 +200,7 @@ struct ComparisonDetail: View {
                         .cornerRadius(8)
                         .frame(width: 326, alignment: .center)
                     }
-                    .padding(.bottom, 4.0)
+                    .padding(.bottom, 7.0)
 
                     
                     // MARK: - Contribute to Income

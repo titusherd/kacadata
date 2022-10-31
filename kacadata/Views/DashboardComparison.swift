@@ -8,37 +8,31 @@
 import SwiftUI
 import Charts
 
-struct BundleRecommendation: Identifiable{
+struct BundleRecommendation: Identifiable {
     
-    let week: String
-    let sales: Int
-    var id: String {week}
+    var report: Int
+    var method: String
+    var week: String
+    var sales: Int
+    var id: Int {report}
+    
+    init(report: Int, method: String, week: String, sales: Int){
+        self.report = report
+        self.method = method
+        self.week = week
+        self.sales = sales
+    }
 }
 
-let sales : [BundleRecommendation] = [
-    .init(week: "Week 1", sales: 170),
-    .init(week: "Week 2", sales: 190),
-    .init(week: "Week 3", sales: 240),
-    .init(week: "Week 4", sales: 210),
-]
-
-//Week 1 170, 170
-//Week 2 190, 140
-//Week 3 240, 160
-//Week 4 210, 150
-
-struct WithoutBundleRecommendation: Identifiable{
-    
-    let week2: String
-    let sales2: Int
-    var id: String {week2}
-}
-
-let sales2 : [WithoutBundleRecommendation] = [
-    .init(week2: "Week 1", sales2: 170),
-    .init(week2: "Week 2", sales2: 140),
-    .init(week2: "Week 3", sales2: 160),
-    .init(week2: "Week 4", sales2: 150),
+var sales : [BundleRecommendation] = [
+    BundleRecommendation(report:1,method: "With Bundle Recommend", week: "Week 1", sales: 170),
+    BundleRecommendation(report:2,method: "Without Bundle Recommend", week: "Week 1", sales: 170),
+    BundleRecommendation(report:3,method: "With Bundle Recommend", week: "Week 2", sales: 190),
+    BundleRecommendation(report:4,method: "Without Bundle Recommend", week: "Week 2", sales: 140),
+    BundleRecommendation(report:5,method: "With Bundle Recommend", week: "Week 3", sales: 240),
+    BundleRecommendation(report:6,method: "Without Bundle Recommend", week: "Week 3", sales: 160),
+    BundleRecommendation(report:7,method: "With Bundle Recommend", week: "Week 4", sales: 210),
+    BundleRecommendation(report:8,method: "Without Bundle Recommend", week: "Week 4", sales: 150)
 ]
 
 struct DashboardComparison: View {
@@ -207,7 +201,7 @@ struct DashboardComparison: View {
                                ,height: 216
                                ,alignment: .center)
                         .shadow(radius: 3)
-
+                        
                         
                         // MARK: - Summary Word Card
                         
@@ -246,36 +240,36 @@ struct DashboardComparison: View {
                             Spacer()
                         }
                         .padding([.top, .leading, .trailing])
-
+                        
                         // MARK: - Summary Word Card
                         
                         (Text("You’ve scheduled to create bundle package for item \n")
-                        +
-                        Text("**Ayam Bakar Taliwang**")
+                         +
+                         Text("**Ayam Bakar Taliwang**")
                             .underline()
-                        +
-                        Text(" and ")
-                        +
-                        Text("**Kue Putu**")
+                         +
+                         Text(" and ")
+                         +
+                         Text("**Kue Putu**")
                             .underline()
-                        +
-                        Text(" for 30 days start from \n")
-                        +
-                        Text("**21 October 2022**")
+                         +
+                         Text(" for 30 days start from \n")
+                         +
+                         Text("**21 October 2022**")
                             .underline()
-                        +
-                        Text(" until ")
-                        +
+                         +
+                         Text(" until ")
+                         +
                          Text("**20 November 2022**")
-                             .underline())
-                            .font(.system(size:12
-                                          ,weight: .regular
-                                          ,design: .rounded
-                                         )
-                            )
-                            .padding(.top, 3.0)
-                            .padding(.horizontal, 16.0)
-                            .padding(.bottom, 14)
+                            .underline())
+                        .font(.system(size:12
+                                      ,weight: .regular
+                                      ,design: .rounded
+                                     )
+                        )
+                        .padding(.top, 3.0)
+                        .padding(.horizontal, 16.0)
+                        .padding(.bottom, 14)
                         
                         NavigationLink(destination: Text("This is a page for Change your plan"), label: {
                             Text("Change Your Plan")
@@ -288,7 +282,7 @@ struct DashboardComparison: View {
                                 .font(.system(size: 14,
                                               weight: .semibold,
                                               design: .rounded))
-                            }
+                        }
                         )
                         .padding(.bottom)
                     }
@@ -298,7 +292,7 @@ struct DashboardComparison: View {
                     )
                 }
                 .padding(.top, 5.0)
-
+                
             }
         }
     }
@@ -342,7 +336,7 @@ struct DashboardComparison: View {
                     y: .value("Views", item.views)
                 )
                 .interpolationMethod(.catmullRom)
-//                .foregroundStyle(by: .value((), ))
+                //                .foregroundStyle(by: .value((), ))
             }
             ForEach(sampleAnalytics){item in
                 // MARK: Bar Graph
@@ -362,29 +356,21 @@ struct DashboardComparison: View {
     }
     
     // MARK: - Comparison Analytics 2 Function
-    @ViewBuilder
+    //    @ViewBuilder
     func AnimatedComparationLineChart()->some View{
         
-        Chart{
-            ForEach(sales){i in
-                LineMark(
-                    x: .value("week", i.week),
-                    y: .value("sales", i.sales)
-                )
-                .interpolationMethod(.catmullRom)
-//                .foregroundStyle(by: .value((), ))
-            }
-            ForEach(sales2){i in
-                LineMark(
-                    x: .value("week2", i.week2),
-                    y: .value("sales2", i.sales2)
-                )
-                .interpolationMethod(.catmullRom)
-            }
+        Chart(sales) {
+            LineMark(
+                x: .value("week", $0.week),
+                y: .value("sales", $0.sales)
+            )
+            .interpolationMethod(.catmullRom)
+            .foregroundStyle(by: .value("method", $0.method))
         }
+        .chartForegroundStyleScale(["With Bundle Recommend": Color.CustomTeal, "Without Bundle Recommend": Color.CustomLightOrange])
+        
         
         // MARK: Customizing Y-Axis Length
-        .foregroundColor(Color("CustomTeal"))
         .frame(
             height: 140
         )
@@ -400,4 +386,6 @@ struct DashboardComparison: View {
 extension Color {
     static let CustomLightGray = Color("CustomLightGray")
     static let LightGray = Color("lightgray")
+    static let CustomLightOrange = Color("CustomLightOrange")
+
 }
