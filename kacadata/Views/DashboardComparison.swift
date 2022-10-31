@@ -11,6 +11,8 @@ import Charts
 struct DashboardComparison: View {
     let image = Image(systemName: "chevron.down")
     let right = Image(systemName: "arrow.right")
+    let up = Image(systemName: "arrow.up")
+    let down = Image(systemName: "arrow.down")
     
     @State var sampleAnalytics: [SiteView] = sample_analytics
     @State private var showSheet: Bool = false
@@ -131,7 +133,7 @@ struct DashboardComparison: View {
                                 )
                                 .foregroundColor(.white)
                                 .padding(.top, 18.0)
-                                .padding(.bottom, 0.000000005)
+                                .padding(.bottom, -2.0)
                             
                             HStack{
                                 Text("Rp495.000.000,00")
@@ -146,7 +148,7 @@ struct DashboardComparison: View {
                                 Spacer()
                                 
                                 // MARK: Try3
-                                (Text(right) + Text(" 5,5 %"))
+                                (Text(up) + Text(" 5,5 %"))
                                     .font(.system(size:18
                                                   ,weight: .semibold
                                                   ,design: .rounded
@@ -168,7 +170,6 @@ struct DashboardComparison: View {
                         }
                         .padding(.leading, 25.0)
                         .padding(.trailing, 12.0)
-                        //                        .background(Color.CustomBlack)
                         .background(Color.CustomDarkTeal)
                         .cornerRadius(8)
                         .frame(width: 325
@@ -183,7 +184,7 @@ struct DashboardComparison: View {
                                           ,design: .rounded
                                          )
                             )
-                            .padding(.top, 18.0)
+                            .padding(.top, 25.0)
                             .padding(.horizontal, 10.0)
                             .padding(.bottom, 16.0)
                     }
@@ -239,17 +240,17 @@ struct DashboardComparison: View {
                                           ,design: .rounded
                                          )
                             )
-                            .padding(.top, 1.0)
+                            .padding(.top, 3.0)
                             .padding(.horizontal, 16.0)
-                            .padding(.bottom, 11)
+                            .padding(.bottom, 14)
                         
-                        NavigationLink(destination: Text("This is page for MOKA Sync"), label: {
-                            Text("Change Your Schedule")
+                        NavigationLink(destination: Text("This is a page for Change your plan"), label: {
+                            Text("Change Your Plan")
                                 .frame(width: 326,
                                        height: 48,
                                        alignment: .center)
-                                .background(Color.CustomTeal)
-                                .foregroundColor(.black)
+                                .background(Color.CustomLightGray)
+                                .foregroundColor(.white)
                                 .cornerRadius(8)
                                 .font(.system(size: 14,
                                               weight: .semibold,
@@ -339,4 +340,9 @@ struct DashboardComparison: View {
             DashboardComparison()
         }
     }
+}
+
+extension Color {
+    static let CustomLightGray = Color("CustomLightGray")
+    static let LightGray = Color("lightgray")
 }
