@@ -50,7 +50,7 @@ struct DashboardComparison: View {
                         
                         // MARK: - Income Card
                         VStack(alignment: .leading){
-                            AnimatedChart()
+                            AnimatedLineChart()
                                 .padding([.top, .trailing], 5.0)
                                 .padding(.vertical, 20.0)
                             
@@ -77,9 +77,8 @@ struct DashboardComparison: View {
                                 .padding(.leading, 13.0)
                                 .padding(.bottom, 16.0)
                             
-                            Button(){
-                                
-                            }  label: {(Text("Detail  ") + Text(right))
+                            NavigationLink(destination: ComparisonDetail()){
+                            label: do {(Text("Detail  ") + Text(right))
                                 .frame(width: 81,
                                        height: 28
                                 )
@@ -91,6 +90,7 @@ struct DashboardComparison: View {
                                 .foregroundColor(.CustomDarkTeal2)
                                 .cornerRadius(4)
                             }
+                            }
                         }
                     }
                     .background(Color.CustomLightTeal)
@@ -99,7 +99,7 @@ struct DashboardComparison: View {
                            //                           ,height: 326
                     )
                 }
-                .navigationTitle("Dashboard")
+                .navigationTitle("Result")
                 .navigationBarHidden(true)
                 
                 // MARK: - Dashboard Overview
@@ -161,7 +161,7 @@ struct DashboardComparison: View {
                             .padding(.trailing)
                             .padding(.bottom, 14.0)
                             
-                            AnimatedChart()
+                            AnimatedBarChart()
                                 .padding(.trailing, 5.0)
                                 .padding(.bottom, 20.0)
                             
@@ -201,7 +201,7 @@ struct DashboardComparison: View {
                     VStack(alignment: .center){
                         // MARK: - Overview Card
                         HStack(spacing: 5){
-                            Text("| Ongoing Bundling")
+                            Text("| Current Bundle")
                                 .font(.system(size:16,
                                               weight: .semibold,
                                               design: .rounded
@@ -215,25 +215,33 @@ struct DashboardComparison: View {
 
                         // MARK: - Summary Word Card
                         
-                        (Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id tincidunt neque, quis tempor urna.  Praesent eget metus sapien. Aenean ac tortor ac tellus rutrum sollicitudin. ")
+                        (Text("You’ve scheduled to create bundle package for item \n")
                         +
                         Text("**Ayam Bakar Taliwang**")
                             .underline()
                         +
-                        Text(" felis, accumsan at neque vehicula, auctor vehicula libero. Donec facilisis sem nec orci ")
+                        Text(" and ")
                         +
                         Text("**Kue Putu**")
                             .underline()
                         +
-                        Text(" ornare."))
-                            .font(.system(size:11
+                        Text(" for 30 days start from \n")
+                        +
+                        Text("**21 October 2022**")
+                            .underline()
+                        +
+                        Text(" until ")
+                        +
+                         Text("**20 November 2022**")
+                             .underline())
+                            .font(.system(size:12
                                           ,weight: .regular
                                           ,design: .rounded
                                          )
                             )
                             .padding(.top, 1.0)
                             .padding(.horizontal, 16.0)
-                            .padding(.bottom, 6)
+                            .padding(.bottom, 11)
                         
                         NavigationLink(destination: Text("This is page for MOKA Sync"), label: {
                             Text("Change Your Schedule")
@@ -264,7 +272,7 @@ struct DashboardComparison: View {
     
     // MARK: - Overview Income Analytics Function
     @ViewBuilder
-    func AnimatedChart()->some View{
+    func AnimatedBarChart()->some View{
         let max = sampleAnalytics.max { item1, item2 in
             return item2.views > item1.views
         }?.views ?? 0
@@ -278,6 +286,43 @@ struct DashboardComparison: View {
                     //                    y: .value("Hour", item.hour, unit: .hour)
                     
                 )
+            }
+        }
+        
+        // MARK: Customizing Y-Axis Length
+        .foregroundColor(Color("CustomTeal"))
+        .frame(
+            //                width: 150,
+            height: 140
+        )
+    }
+    
+    @ViewBuilder
+    func AnimatedLineChart()->some View{
+        let max = sampleAnalytics.max { item1, item2 in
+            return item2.views > item1.views
+        }?.views ?? 0
+        
+        Chart{
+            ForEach(sampleAnalytics){item in
+                // MARK: Bar Graph
+                LineMark(
+                    x: .value("Hour", item.hour, unit: .hour),
+                    y: .value("Views", item.views)
+                    //                    y: .value("Hour", item.hour, unit: .hour)
+                    
+                )
+                .interpolationMethod(.catmullRom)
+            }
+            ForEach(sampleAnalytics){item in
+                // MARK: Bar Graph
+                LineMark(
+                    x: .value("Hour", item.hour, unit: .hour),
+                    y: .value("Views", item.views)
+                    //                    y: .value("Hour", item.hour, unit: .hour)
+                    
+                )
+                .interpolationMethod(.catmullRom)
             }
         }
         
