@@ -3,7 +3,7 @@
 //  kacadata
 //
 //  Created by Titus Herdiawan
-//
+
 
 import Foundation
 import Combine
@@ -35,22 +35,29 @@ class Service{
 }
 
 extension Service: ServiceProtocol{
-    
-    
+    func getUserModelServiceData() -> AnyPublisher<UserModel, NetworkErrors> {
+        let url = URL(string: "http")!
+        return AF.request(url,method: .get)
+                     .publishDecodable(type: UserModel.self)
+                     .value()
+                     .mapError { _ in NetworkErrors.decoderError }
+                     .eraseToAnyPublisher()
+    }
+
     func getUserModelServiceData() -> AnyPublisher<BusinessModel,NetworkErrors> {
-//        let url = URL.get()
-        return AF.request(url!,method: .get)
+        let url = URL(string: "http")!
+        return AF.request(url,method: .get)
                      .publishDecodable(type: BusinessModel.self)
                      .value()
                      .mapError { _ in NetworkErrors.decoderError }
                      .eraseToAnyPublisher()
     }
-    
+
     func getOutletModel()-> AnyPublisher<OutletModel,Error>{
-//        let url = URL.get()!
+        let url = URL(string: "http")!
         return AF.request(url, method: .get)
             .publishDecodable(type: OutletModel.self)
-            .tryCompactMap { (response) -> TopTVShowsDataModel? in
+            .tryCompactMap { (response) -> OutletModel? in
                 if let error = response.error { throw error }
                 return response.value
             }

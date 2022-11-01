@@ -1,6 +1,0 @@
-framework module Pods_kacadata {
-  umbrella header "Pods-kacadata-umbrella.h"
-
-  export *
-  module * { export * }
-}
