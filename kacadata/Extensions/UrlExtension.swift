@@ -76,6 +76,8 @@ extension URL {
         let value = try? resourceValues(forKeys: [.isDirectoryKey])
         return value?.fileSize
     }
+    
+    
 }
 
 //.appendingPathComponent(subfolder,isDirectory: true)
