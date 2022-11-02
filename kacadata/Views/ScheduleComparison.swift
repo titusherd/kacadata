@@ -10,6 +10,13 @@ import SwiftUI
 struct ScheduleComparison: View {
     @Environment(\.calendar) var calendar
     @State private var dates = Set<DateComponents>()
+    @State var selectedDate: Date = Date()
+    
+    var dateFormatter: DateFormatter{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
+    }
     
     var body: some View {
         NavigationStack {
@@ -17,14 +24,80 @@ struct ScheduleComparison: View {
                 MultiDatePicker(selection: $dates, in: .init(uncheckedBounds: (Date.now,Date.init(timeIntervalSinceNow: 3000000))), label: {
                     Text("Pick Dates")
                 })
+//                .tint(Color.CustomTeal)
+                .tint(Color.CustomDarkTeal)
                 .frame(width: 372,
                        height: 372)
-                .padding()
-                .navigationTitle("Calendar View")
+                .padding(.horizontal)
+//                .navigationTitle("Pick Date")
                 
-                ForEach(selectedDates, id: \.self){ date in
-                    Text(date, format: .dateTime)
+                CustomDivider()
+                    .padding(.top, -15.0)
+                
+//                ForEach(selectedDates, id: \.self){ date in
+//                    Text(date, format: .dateTime)
+//                }
+                
+                HStack(alignment: .center){
+                    Spacer()
+                    
+                    HStack(){
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    (Text("Start from :\n\n").font(.system(size: 14, weight: .regular))
+                     
+                     +
+                     
+                     Text(dateFormatter.string(from: selectedDate))                            .foregroundColor(.CustomDarkTeal)
+                        .font(.system(size: 14, weight: .bold))
+                    )
+                        .multilineTextAlignment(.leading)
+                        
+                    
+                    Spacer()
+                    
+                    (Text("Until :\n\n").font(.system(size: 14, weight: .regular))
+                     
+                     +
+                     
+                     Text(dateFormatter.string(from: selectedDate))
+                        .foregroundColor(.CustomDarkTeal)
+                        .font(.system(size: 14,weight: .bold))
+                    )
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                    
+                    HStack(){
+                        
+                    }
+                    
+                    Spacer()
                 }
+                .padding(.horizontal, -230.0)
+                .padding(.top, 8.0)
+                
+                Spacer()
+                
+                NavigationLink(
+                    destination: Text("This is page for Dashboard"),
+                    label: {
+                        Text("Done")
+                            .frame(width: 358,
+                                   height: 48,
+                                   alignment: .center)
+                            .background(Color.CustomTeal)
+                            .foregroundColor(.black)
+                            .cornerRadius(8)
+                            .font(.system(size: 14,
+                                          weight: .semibold,
+                                          design: .rounded))
+                    }
+                )
+                .padding(.top, 240.0)
 
             }
 
