@@ -46,6 +46,7 @@
 		F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */; };
 		F66665B429012A340083E6B8 /* SiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66665B329012A340083E6B8 /* SiteView.swift */; };
 		F66E42C12907D028007D5935 /* ComparisonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E42C02907D028007D5935 /* ComparisonDetail.swift */; };
+		F6DF35972910F27000D85622 /* ScheduleComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF35962910F27000D85622 /* ScheduleComparison.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		F66665B128FFDEAB0083E6B8 /* DashboardOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOverview.swift; sourceTree = "<group>"; };
 		F66665B329012A340083E6B8 /* SiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteView.swift; sourceTree = "<group>"; };
 		F66E42C02907D028007D5935 /* ComparisonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonDetail.swift; sourceTree = "<group>"; };
+		F6DF35962910F27000D85622 /* ScheduleComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleComparison.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				581B86AA2902816C00B58DBE /* BundleSelection2.swift */,
 				49AAA96F28F5467300EDC09D /* ContentView.swift */,
 				496A6CA228FE7382009A1C01 /* DocumentPickerView.swift */,
+				F6DF35962910F27000D85622 /* ScheduleComparison.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				F64AA2122907969900BD4D97 /* DashboardComparison.swift in Sources */,
 				F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */,
 				F66665B429012A340083E6B8 /* SiteView.swift in Sources */,
+				F6DF35972910F27000D85622 /* ScheduleComparison.swift in Sources */,
 				49AAA97028F5467300EDC09D /* ContentView.swift in Sources */,
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
 				581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */,
