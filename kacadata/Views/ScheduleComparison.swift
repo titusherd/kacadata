@@ -59,7 +59,7 @@ struct CalendarScreen: View {
                 .edgesIgnoringSafeArea(.all)
             
             ZStack{
-                //                        Color.white
+                //Color.white
                 
                 VStack{
                     HStack{
@@ -86,23 +86,23 @@ struct CalendarScreen: View {
                         MultiDatePicker(selection: $dates, in: .init(uncheckedBounds: (Date.now,Date.init(timeIntervalSinceNow: 3000000))), label: {
                             Text("Pick Dates")
                         })
-                        //                .tint(Color.CustomTeal)
+                        //.tint(Color.CustomTeal)
                         .tint(Color.CustomDarkTeal)
                         .frame(width: 372,
                                height: 372)
                         .padding(.horizontal)
                         .padding(.top, 8.0)
-                        //                .navigationTitle("Pick Date")
+                        //.navigationTitle("Pick Date")
                         
                         Divider()
                             .padding(.top, -15.0)
                         
-//                        CustomDivider()
-//                            .padding(.top, -15.0)
+                        //CustomDivider()
+                        //.padding(.top, -15.0)
                         
-                        //                ForEach(selectedDates, id: \.self){ date in
-                        //                    Text(date, format: .dateTime)
-                        //                }
+                        //ForEach(selectedDates, id: \.self){ date in
+                        //Text(date, format: .dateTime)
+                        //}
                         
                         HStack(alignment: .center){
                             Spacer()
@@ -168,7 +168,7 @@ struct CalendarScreen: View {
                             }
                         )
                         .padding(.bottom)
-                        //                    .padding(.top, 220.0)
+                        //.padding(.top, 220.0)
                     }.background(Color.white)
                 }
             }
