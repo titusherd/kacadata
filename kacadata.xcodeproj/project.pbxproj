@@ -45,6 +45,19 @@
 		581B86A72902814400B58DBE /* AllowSyncTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A62902814400B58DBE /* AllowSyncTemp.swift */; };
 		581B86A92902815E00B58DBE /* DummyDashboardTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86A82902815E00B58DBE /* DummyDashboardTemp.swift */; };
 		581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581B86AA2902816C00B58DBE /* BundleSelection2.swift */; };
+		582101EF2915860400A119F3 /* OutletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101EE2915860400A119F3 /* OutletViewModel.swift */; };
+		582101F12915860E00A119F3 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101F02915860E00A119F3 /* DashboardViewModel.swift */; };
+		582101F3291586B000A119F3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101F2291586B000A119F3 /* WelcomeView.swift */; };
+		582101F5291586C300A119F3 /* OutletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101F4291586C300A119F3 /* OutletView.swift */; };
+		582101F7291586D400A119F3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101F6291586D400A119F3 /* ProfileView.swift */; };
+		582101F9291586E700A119F3 /* ListOutletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101F8291586E700A119F3 /* ListOutletView.swift */; };
+		582101FB291586F600A119F3 /* AddNewOutletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101FA291586F600A119F3 /* AddNewOutletView.swift */; };
+		582101FD2915870000A119F3 /* EditOutletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101FC2915870000A119F3 /* EditOutletView.swift */; };
+		582101FF2915870F00A119F3 /* ModalDeleteOutletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582101FE2915870F00A119F3 /* ModalDeleteOutletView.swift */; };
+		582102012915871C00A119F3 /* AddNewDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582102002915871C00A119F3 /* AddNewDashboardView.swift */; };
+		582102032915872C00A119F3 /* EditDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582102022915872C00A119F3 /* EditDashboardView.swift */; };
+		582102052915873D00A119F3 /* ModalDeleteDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582102042915873D00A119F3 /* ModalDeleteDashboardView.swift */; };
+		582102072915F81C00A119F3 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582102062915F81C00A119F3 /* ContentView2.swift */; };
 		75017975290F2AE800A01BAF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75017974290F2AE800A01BAF /* NetworkManager.swift */; };
 		F64AA2122907969900BD4D97 /* DashboardComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64AA2112907969900BD4D97 /* DashboardComparison.swift */; };
 		F653495928FE9E6600C1E9DD /* SyncDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653495828FE9E6600C1E9DD /* SyncDataView.swift */; };
@@ -93,6 +106,19 @@
 		581B86A62902814400B58DBE /* AllowSyncTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowSyncTemp.swift; sourceTree = "<group>"; };
 		581B86A82902815E00B58DBE /* DummyDashboardTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDashboardTemp.swift; sourceTree = "<group>"; };
 		581B86AA2902816C00B58DBE /* BundleSelection2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleSelection2.swift; sourceTree = "<group>"; };
+		582101EE2915860400A119F3 /* OutletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletViewModel.swift; sourceTree = "<group>"; };
+		582101F02915860E00A119F3 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		582101F2291586B000A119F3 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		582101F4291586C300A119F3 /* OutletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletView.swift; sourceTree = "<group>"; };
+		582101F6291586D400A119F3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		582101F8291586E700A119F3 /* ListOutletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOutletView.swift; sourceTree = "<group>"; };
+		582101FA291586F600A119F3 /* AddNewOutletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewOutletView.swift; sourceTree = "<group>"; };
+		582101FC2915870000A119F3 /* EditOutletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOutletView.swift; sourceTree = "<group>"; };
+		582101FE2915870F00A119F3 /* ModalDeleteOutletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDeleteOutletView.swift; sourceTree = "<group>"; };
+		582102002915871C00A119F3 /* AddNewDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDashboardView.swift; sourceTree = "<group>"; };
+		582102022915872C00A119F3 /* EditDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDashboardView.swift; sourceTree = "<group>"; };
+		582102042915873D00A119F3 /* ModalDeleteDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDeleteDashboardView.swift; sourceTree = "<group>"; };
+		582102062915F81C00A119F3 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		75017974290F2AE800A01BAF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F64AA2112907969900BD4D97 /* DashboardComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComparison.swift; sourceTree = "<group>"; };
 		F653495828FE9E6600C1E9DD /* SyncDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDataView.swift; sourceTree = "<group>"; };
@@ -136,6 +162,17 @@
 				49AAA96F28F5467300EDC09D /* ContentViewTemp.swift */,
 				496A6CA228FE7382009A1C01 /* DocumentPickerView.swift */,
 				49FC4A9629091256009A85BC /* HelpSyncView.swift */,
+				582101F2291586B000A119F3 /* WelcomeView.swift */,
+				582101F4291586C300A119F3 /* OutletView.swift */,
+				582101F6291586D400A119F3 /* ProfileView.swift */,
+				582101F8291586E700A119F3 /* ListOutletView.swift */,
+				582101FA291586F600A119F3 /* AddNewOutletView.swift */,
+				582101FC2915870000A119F3 /* EditOutletView.swift */,
+				582101FE2915870F00A119F3 /* ModalDeleteOutletView.swift */,
+				582102002915871C00A119F3 /* AddNewDashboardView.swift */,
+				582102022915872C00A119F3 /* EditDashboardView.swift */,
+				582102042915873D00A119F3 /* ModalDeleteDashboardView.swift */,
+				582102062915F81C00A119F3 /* ContentView2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				496A6CA528FE73EA009A1C01 /* HomeViewModel.swift */,
+				582101EE2915860400A119F3 /* OutletViewModel.swift */,
+				582101F02915860E00A119F3 /* DashboardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -337,36 +376,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581B86A92902815E00B58DBE /* DummyDashboard.swift in Sources */,
+				581B86A52902812C00B58DBE /* DummySyncDataPage.swift in Sources */,
+				582101F5291586C300A119F3 /* OutletView.swift in Sources */,
 				581B86A92902815E00B58DBE /* DummyDashboardTemp.swift in Sources */,
 				581B86A52902812C00B58DBE /* ConnectMokaView.swift in Sources */,
 				49FC4A99290A4362009A85BC /* StringExtension.swift in Sources */,
 				49CB34F428F54B5200C8F656 /* OutletModel.swift in Sources */,
+				582101FB291586F600A119F3 /* AddNewOutletView.swift in Sources */,
+				582101EF2915860400A119F3 /* OutletViewModel.swift in Sources */,
 				496A6CAD28FE7453009A1C01 /* CoreDataHandler.swift in Sources */,
 				496A6CA328FE7382009A1C01 /* DocumentPickerView.swift in Sources */,
 				496A6C9C28FD3562009A1C01 /* ItemSalesModel.swift in Sources */,
 				49AAA97728F5467400EDC09D /* Persistence.swift in Sources */,
 				F64AA2122907969900BD4D97 /* DashboardComparison.swift in Sources */,
 				F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */,
+				582101FF2915870F00A119F3 /* ModalDeleteOutletView.swift in Sources */,
 				F66665B429012A340083E6B8 /* SiteView.swift in Sources */,
 				49AAA97028F5467300EDC09D /* ContentViewTemp.swift in Sources */,
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
+				582101F12915860E00A119F3 /* DashboardViewModel.swift in Sources */,
 				581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */,
-				581B86A72902814400B58DBE /* AllowSyncTemp.swift in Sources */,
+				581B86A72902814400B58DBE /* AllowSync.swift in Sources */,
+				582102012915871C00A119F3 /* AddNewDashboardView.swift in Sources */,
 				75017975290F2AE800A01BAF /* NetworkManager.swift in Sources */,
 				49FC4A7728FE8E18009A85BC /* UrlExtension.swift in Sources */,
 				49CB34F228F54AB800C8F656 /* BusinessModel.swift in Sources */,
+				582101F3291586B000A119F3 /* WelcomeView.swift in Sources */,
 				49FC4A8128FFA70F009A85BC /* FontExtension.swift in Sources */,
+				582101F9291586E700A119F3 /* ListOutletView.swift in Sources */,
 				496A6CA628FE73EA009A1C01 /* HomeViewModel.swift in Sources */,
+				582102032915872C00A119F3 /* EditDashboardView.swift in Sources */,
+				582101FD2915870000A119F3 /* EditOutletView.swift in Sources */,
 				49FC4A7928FEA336009A85BC /* OverviewModel.swift in Sources */,
 				496A6CAB28FE743D009A1C01 /* CloudHandler.swift in Sources */,
 				49CB34F028F549DC00C8F656 /* UserModel.swift in Sources */,
+				582101F7291586D400A119F3 /* ProfileView.swift in Sources */,
 				496A6CA928FE742E009A1C01 /* LocalHandler.swift in Sources */,
 				4915952B29125C8D008DF08F /* BackButton.swift in Sources */,
 				496A6CA028FD39BA009A1C01 /* CheckoutModel.swift in Sources */,
 				49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */,
 				496A6C9E28FD36ED009A1C01 /* TransactionModel.swift in Sources */,
 				49FC4A7F28FFA6D6009A85BC /* ColorExtension.swift in Sources */,
-				F653495928FE9E6600C1E9DD /* SyncDataView.swift in Sources */,
+				582102052915873D00A119F3 /* ModalDeleteDashboardView.swift in Sources */,
+				582102072915F81C00A119F3 /* ContentView2.swift in Sources */,
+				F653495928FE9E6600C1E9DD /* SycnPageView.swift in Sources */,
 				F66E42C12907D028007D5935 /* ComparisonDetail.swift in Sources */,
 				49FC4A9729091256009A85BC /* HelpSyncView.swift in Sources */,
 			);
