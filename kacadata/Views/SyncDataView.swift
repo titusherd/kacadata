@@ -52,7 +52,8 @@ struct SyncDataView: View {
                         .lineSpacing(0)
                     
                     NavigationLink(
-                        destination: HelpSyncView(),
+                        destination: HelpSyncView()
+                            .navigationBarBackButtonHidden(),
                         label: {
                             image
                                 .resizable()
@@ -86,7 +87,8 @@ struct SyncDataView: View {
                 // MARK: - Button Section
                 
                 NavigationLink(
-                    destination: ConnectMokaView(),
+                    destination: ConnectMokaView()
+                        .navigationBarBackButtonHidden(),
                     label: {
                         Text("Connect Using MOKA")
                             .frame(

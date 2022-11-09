@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4914346629110A8F00CFECDF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4914346529110A8F00CFECDF /* Alamofire */; };
+		4915952B29125C8D008DF08F /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4915952A29125C8D008DF08F /* BackButton.swift */; };
 		496A6C9C28FD3562009A1C01 /* ItemSalesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6C9B28FD3562009A1C01 /* ItemSalesModel.swift */; };
 		496A6C9E28FD36ED009A1C01 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6C9D28FD36ED009A1C01 /* TransactionModel.swift */; };
 		496A6CA028FD39BA009A1C01 /* CheckoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6C9F28FD39BA009A1C01 /* CheckoutModel.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4915952A29125C8D008DF08F /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		496A6C9B28FD3562009A1C01 /* ItemSalesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSalesModel.swift; sourceTree = "<group>"; };
 		496A6C9D28FD36ED009A1C01 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		496A6C9F28FD39BA009A1C01 /* CheckoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutModel.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4915952929125C76008DF08F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				4915952A29125C8D008DF08F /* BackButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		496A6CA128FE705B009A1C01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 		49AAA96C28F5467300EDC09D /* kacadata */ = {
 			isa = PBXGroup;
 			children = (
+				4915952929125C76008DF08F /* Component */,
 				49FC4A952907C98C009A85BC /* Info.plist */,
 				49FC4A822907C81D009A85BC /* Fonts */,
 				7546E8FF290B4AF6009B48F7 /* Networking */,
@@ -340,7 +351,7 @@
 				49AAA97028F5467300EDC09D /* ContentViewTemp.swift in Sources */,
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
 				581B86AB2902816C00B58DBE /* BundleSelection2.swift in Sources */,
-				581B86A72902814400B58DBE /* AllowSync.swift in Sources */,
+				581B86A72902814400B58DBE /* AllowSyncTemp.swift in Sources */,
 				75017975290F2AE800A01BAF /* NetworkManager.swift in Sources */,
 				49FC4A7728FE8E18009A85BC /* UrlExtension.swift in Sources */,
 				49CB34F228F54AB800C8F656 /* BusinessModel.swift in Sources */,
@@ -350,6 +361,7 @@
 				496A6CAB28FE743D009A1C01 /* CloudHandler.swift in Sources */,
 				49CB34F028F549DC00C8F656 /* UserModel.swift in Sources */,
 				496A6CA928FE742E009A1C01 /* LocalHandler.swift in Sources */,
+				4915952B29125C8D008DF08F /* BackButton.swift in Sources */,
 				496A6CA028FD39BA009A1C01 /* CheckoutModel.swift in Sources */,
 				49AAA97A28F5467400EDC09D /* kacadata.xcdatamodeld in Sources */,
 				496A6C9E28FD36ED009A1C01 /* TransactionModel.swift in Sources */,

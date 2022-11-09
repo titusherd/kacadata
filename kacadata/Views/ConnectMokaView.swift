@@ -21,6 +21,7 @@ struct ConnectMokaView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
         }
+        .navigationBarItems(leading: BackButton(foregroundColor: .primary, title: "Connect"))
     }
 }
  

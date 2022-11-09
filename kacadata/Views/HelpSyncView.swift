@@ -9,7 +9,12 @@ import SwiftUI
 
 struct HelpSyncView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Hello World")
+            }
+        }
+        .navigationBarItems(leading: BackButton(foregroundColor: .primary, title: "Connect"))
     }
 }
 
