@@ -15,11 +15,7 @@ struct kacadataApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            //DummySyncDataPage()
-            
-            
-                ContentView2()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            SyncDataView(homeVM: HomeViewModel())
         }
     }
 }
