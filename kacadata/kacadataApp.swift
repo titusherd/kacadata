@@ -13,9 +13,16 @@ struct kacadataApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            SyncDataView(homeVM: HomeViewModel())
+            ZStack {
+                let data = KeychainHelper.standard.read() ?? Data("".utf8)
+                let accessToken = String(data: data, encoding: .utf8)!
+
+                if !accessToken.isEmpty {
+                    DashboardOverview()
+                } else {
+                    SyncDataView(homeVM: HomeViewModel())
+                }
+            }
         }
     }
 }

@@ -27,7 +27,19 @@ class HomeViewModel: ObservableObject {
     private var cloudHandler = CloudHandler()
     private let docCoreDataHandler = CoreDataHandler()
     
+    @Published
+    var token: String = ""
+    @Published
+    var error: String = ""
+    @Published
+    var showAlert: Bool = false
+    
+    private var subscriptions: Set<AnyCancellable> = []
+    private var dataManager: ServiceProtocol
+    private let debounceInterval: DispatchQueue.SchedulerTimeType.Stride = .seconds(1)
+    
     init() {
+        self.dataManager = Service.shared
         self.documents = docCoreDataHandler.listOfDocuments()
         self.documents = documents.sorted(by: {($0.name ?? "") < ($1.name ?? "")})
         DispatchQueue.global(qos: .userInitiated).async {[self] in
@@ -39,6 +51,31 @@ class HomeViewModel: ObservableObject {
             }
         }
     }
+    
+    func getToken(code: String) {
+        dataManager.getAccessToken(code)
+            .sink {[weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .failure(let error):
+                    self.error = error.errorDescription ?? ""
+                    print(self.error)
+                case .finished:
+                    break
+                }
+            } receiveValue: {[weak self] value in
+                guard let self = self else { return }
+                self.token = value.accessToken
+                KeychainHelper.standard.save(Data(self.token.utf8))
+            }
+            .store(in: &subscriptions)
+    }
+    
+    func createAlert( with error: NetworkError ) {
+        self.error = error.backendError == nil ? error.initialError.localizedDescription : error.backendError!.message
+        self.showAlert = true
+    }
+    
     
     /// Checks if iCloud account is setup
     /// - Returns: true if setup is done

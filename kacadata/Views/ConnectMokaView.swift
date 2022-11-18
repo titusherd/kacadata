@@ -12,13 +12,17 @@ import SafariServices
 
 struct ConnectMokaView: View {
     
-    // initial URL string
-    @State var urlString = "https://backoffice.mokapos.com/apps/2000000299/learn-more"
+    @ObservedObject
+    var viewModel = HomeViewModel()
+    @Binding
+    var showWebView: Bool
+    @State
+    var urlString = "https://backoffice.mokapos.com/apps/2000000299/learn-more"
     
     var body: some View {
         NavigationView {
             ZStack {
-                WebView(url: URL(string: urlString)!)
+                WebView(url: URL(string: urlString)!, viewModel: viewModel, showWebView: $showWebView)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
@@ -27,23 +31,12 @@ struct ConnectMokaView: View {
     }
 }
 
-struct SafariView: UIViewControllerRepresentable {
-    
-    let url: URL
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
-        return SFSafariViewController(url: url)
-    }
-    
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
-        
-    }
-    
-}
-
 struct WebView: UIViewRepresentable {
     
-    var url: URL
+    let url: URL
+    let viewModel: HomeViewModel
+    @Binding
+    var showWebView: Bool
     
     func makeUIView(context: Context) -> WKWebView {
         let config = WKWebViewConfiguration()
@@ -73,14 +66,20 @@ struct WebView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> WebViewCoordinator {
-        WebViewCoordinator(self)
+        WebViewCoordinator(self, viewModel: viewModel, showWebView: $showWebView)
     }
     
     class WebViewCoordinator: NSObject, WKUIDelegate, WKNavigationDelegate {
-        var parent: WebView
         
-        init(_ parent: WebView) {
+        var parent: WebView
+        var viewModel: HomeViewModel
+        @Binding
+        var showWebView: Bool
+        
+        init(_ parent: WebView, viewModel: HomeViewModel, showWebView: Binding<Bool>) {
             self.parent = parent
+            self.viewModel = viewModel
+            _showWebView = showWebView
         }
         
         func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
@@ -93,6 +92,11 @@ struct WebView: UIViewRepresentable {
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             if let currentUrl = webView.url {
                 print(currentUrl)
+                if currentUrl.absoluteString.contains(Constant.redirectUri) {
+                    let code = currentUrl.absoluteString.components(separatedBy: "code=")[1]
+                    viewModel.getToken(code: code)
+                    showWebView = false
+                }
             }
         }
     }

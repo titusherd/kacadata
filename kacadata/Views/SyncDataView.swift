@@ -13,9 +13,13 @@ struct SyncDataView: View {
     @StateObject
     var homeVM: HomeViewModel
     @State
-    private var isAdded = false
+    private var isFileAdded = false
     @State
-    private var isOpened = false
+    private var isFileOpened = false
+    
+    @State
+    private var showWebView = false
+    
     
     private func printInfo() {
         if (!homeVM.documents.isEmpty) {
@@ -87,21 +91,23 @@ struct SyncDataView: View {
                 // MARK: - Button Section
                 
                 NavigationLink(
-                    destination: ConnectMokaView()
+                    destination: ConnectMokaView(showWebView: $showWebView)
                         .navigationBarBackButtonHidden(),
+                    isActive: $showWebView,
                     label: {
-                        Text("Connect Using MOKA")
-                            .frame(
-                                maxWidth: .infinity,
-                                minHeight: 48,
-                                alignment: .center)
-                            .background(Color.primary)
-                            .foregroundColor(.black)
-                            .cornerRadius(8)
-                            .padding(.horizontal, 16)
-                            .font(.system(size: 14,
-                                          weight: .semibold,
-                                          design: .rounded))
+                        Button("Connect Using MOKA") {
+                           showWebView = true
+                        }.frame(
+                            maxWidth: .infinity,
+                            minHeight: 48,
+                            alignment: .center)
+                        .background(Color.primary)
+                        .foregroundColor(.black)
+                        .cornerRadius(8)
+                        .padding(.horizontal, 16)
+                        .font(.system(size: 14,
+                                      weight: .semibold,
+                                      design: .rounded))
                     }
                 )
                 .padding(.bottom, 4.0)
@@ -117,11 +123,11 @@ struct SyncDataView: View {
                                   design: .rounded))
                     .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous).stroke(Color.gray, lineWidth: 2))
                     .padding(.horizontal, 16)
-                    .sheet(isPresented: $isOpened) {
-                        DocumentPickerView(homeViewModel: homeVM, added: $isAdded)
+                    .sheet(isPresented: $isFileOpened) {
+                        DocumentPickerView(homeViewModel: homeVM, added: $isFileAdded)
                     }
                     .onTapGesture {
-                        isOpened.toggle()
+                        isFileOpened.toggle()
                     }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
