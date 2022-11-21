@@ -16,13 +16,16 @@ struct ConnectMokaView: View {
     var viewModel = HomeViewModel()
     @Binding
     var showWebView: Bool
+    @Binding
+    var isTokenAvailable: Bool
     @State
     var urlString = "https://backoffice.mokapos.com/apps/2000000299/learn-more"
     
     var body: some View {
         NavigationView {
             ZStack {
-                WebView(url: URL(string: urlString)!, viewModel: viewModel, showWebView: $showWebView)
+                WebView(url: URL(string: urlString)!, viewModel: viewModel,
+                        showWebView: $showWebView, isTokenAvailable: $isTokenAvailable)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
@@ -37,6 +40,8 @@ struct WebView: UIViewRepresentable {
     let viewModel: HomeViewModel
     @Binding
     var showWebView: Bool
+    @Binding
+    var isTokenAvailable: Bool
     
     func makeUIView(context: Context) -> WKWebView {
         let config = WKWebViewConfiguration()
@@ -66,7 +71,7 @@ struct WebView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> WebViewCoordinator {
-        WebViewCoordinator(self, viewModel: viewModel, showWebView: $showWebView)
+        WebViewCoordinator(self, viewModel: viewModel, showWebView: $showWebView, isTokenAvailable: $isTokenAvailable)
     }
     
     class WebViewCoordinator: NSObject, WKUIDelegate, WKNavigationDelegate {
@@ -75,11 +80,14 @@ struct WebView: UIViewRepresentable {
         var viewModel: HomeViewModel
         @Binding
         var showWebView: Bool
+        @Binding
+        var isTokenAvailable: Bool
         
-        init(_ parent: WebView, viewModel: HomeViewModel, showWebView: Binding<Bool>) {
+        init(_ parent: WebView, viewModel: HomeViewModel, showWebView: Binding<Bool>, isTokenAvailable: Binding<Bool>) {
             self.parent = parent
             self.viewModel = viewModel
             _showWebView = showWebView
+            _isTokenAvailable = isTokenAvailable
         }
         
         func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
@@ -95,6 +103,9 @@ struct WebView: UIViewRepresentable {
                 if currentUrl.absoluteString.contains(Constant.redirectUri) {
                     let code = currentUrl.absoluteString.components(separatedBy: "code=")[1]
                     viewModel.getToken(code: code)
+                    let data = KeychainHelper.standard.read() ?? Data("".utf8)
+                    let accessToken = String(data: data, encoding: .utf8)!
+                    isTokenAvailable = !accessToken.isEmpty
                     showWebView = false
                 }
             }

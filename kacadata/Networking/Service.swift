@@ -11,6 +11,8 @@ import Alamofire
 
 protocol ServiceProtocol {
     func getAccessToken(_ code: String) -> AnyPublisher<ResponseToken, AFError>
+    func getProfile(_ accessToken: String) -> AnyPublisher<ResponseUser, AFError>
+    func getItemSales(_ accessToken: String, _ outletId: Int) -> AnyPublisher<ResponseBase<[ItemSalesModel]>, AFError>
 }
 
 class Service {
@@ -19,6 +21,40 @@ class Service {
 }
 
 extension Service: ServiceProtocol {
+    func getItemSales(_ accessToken: String, _ outletId: Int) -> AnyPublisher<ResponseBase<[ItemSalesModel]>, AFError> {
+        let url = URL(string:  Constant.baseUrl + "/v3/outlets/\(outletId)/reports/item_sales")!
+        
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        
+        return AF.request(url, method: .get, headers: headers)
+            .validate()
+            .publishDecodable(type: ResponseBase<[ItemSalesModel]>.self)
+            .value()
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
+    func getProfile(_ accessToken: String) -> AnyPublisher<ResponseUser, AFError> {
+        let url = URL(string:  Constant.baseUrl + "/v1/profile/self")!
+        
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        
+        print("Token \(accessToken)")
+        
+        return AF.request(url, method: .get, headers: headers)
+            .validate()
+            .publishDecodable(type: ResponseUser.self)
+            .value()
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
     func getAccessToken(_ code: String) -> AnyPublisher<ResponseToken, AFError> {
         let url = URL(string:  Constant.baseUrl + "/oauth/token")!
         

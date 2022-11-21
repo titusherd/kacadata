@@ -34,9 +34,15 @@ class HomeViewModel: ObservableObject {
     @Published
     var showAlert: Bool = false
     
+    @Published
+    var itemSales: [ItemSalesModel] = []
+    @Published
+    var user: ResponseUser = ResponseUser()
+    
     private var subscriptions: Set<AnyCancellable> = []
     private var dataManager: ServiceProtocol
-    private let debounceInterval: DispatchQueue.SchedulerTimeType.Stride = .seconds(1)
+    
+    // private let debounceInterval: DispatchQueue.SchedulerTimeType.Stride = .seconds(1)
     
     init() {
         self.dataManager = Service.shared
@@ -71,11 +77,53 @@ class HomeViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
+    func getProfile() {
+        let data = KeychainHelper.standard.read() ?? Data("".utf8)
+        let accessToken = String(data: data, encoding: .utf8)!
+        
+        dataManager.getProfile(accessToken)
+            .sink {[weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .failure(let error):
+                    self.error = error.errorDescription ?? ""
+                    print("Profile \(self.error)")
+                case .finished:
+                    break
+                }
+            } receiveValue: {[weak self] value in
+                guard let self = self else { return }
+                print(value)
+                self.user = value
+            }
+            .store(in: &subscriptions)
+    }
+    
+    func getItemSales() {
+        let data = KeychainHelper.standard.read() ?? Data("".utf8)
+        let accessToken = String(data: data, encoding: .utf8)!
+        
+        dataManager.getItemSales(accessToken, 12)
+            .sink {[weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .failure(let error):
+                    self.error = error.errorDescription ?? ""
+                    print(self.error)
+                case .finished:
+                    break
+                }
+            } receiveValue: {[weak self] value in
+                guard let self = self else { return }
+                self.itemSales = value.data
+            }
+            .store(in: &subscriptions)
+    }
+    
     func createAlert( with error: NetworkError ) {
         self.error = error.backendError == nil ? error.initialError.localizedDescription : error.backendError!.message
         self.showAlert = true
     }
-    
     
     /// Checks if iCloud account is setup
     /// - Returns: true if setup is done
