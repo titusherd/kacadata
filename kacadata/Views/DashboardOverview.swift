@@ -13,8 +13,13 @@ struct DashboardOverview: View {
     let up = Image(systemName: "arrow.up")
     let down = Image(systemName: "arrow.down")
     
-    @State private var sampleAnalytics: [SiteView] = sample_analytics
-    @State private var showSheet: Bool = false
+    @State
+    private var sampleAnalytics: [SiteView] = sample_analytics
+    @State
+    private var showSheet: Bool = false
+    
+    @StateObject
+    var homeVM: HomeViewModel
     
     var body: some View {
         NavigationView{
@@ -46,7 +51,7 @@ struct DashboardOverview: View {
                             .foregroundColor(.CustomDarkTeal2)
                             .cornerRadius(4)
                         }
-                        .overlay(RoundedRectangle(cornerRadius:4, style: .continuous).stroke(Color.CustomTeal, lineWidth: 2))
+                        .overlay(RoundedRectangle(cornerRadius:4, style: .continuous).stroke(.primary, lineWidth: 2))
                         .sheet(isPresented: $showSheet) {
                             Text("Choose Period of Time")
                                 .font(.system(size:13
@@ -98,9 +103,7 @@ struct DashboardOverview: View {
                                     }
                                 }
                             }
-                            //                            .foregroundColor(Color.blue)
                             .presentationDetents([.large, .fraction(0.75)])
-                            //                            .background(Color.white)
                         }
                     }
                     .padding([.top, .leading, .trailing])
@@ -147,22 +150,22 @@ struct DashboardOverview: View {
                                 Spacer()
                                 
                                 // MARK: Try1
-//                                RoundedRectangle(cornerRadius: 4, style: .continuous)
-//                                    .background(Color.CustomTeal)
+                                //                                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                //                                    .background(Color.CustomTeal)
                                 
                                 // MARK: Try2
-//                                ZStack {
-//                                    RoundedRectangle(cornerRadius: 4, style: .continuous)
-//                                        .foregroundColor(Color.CustomTeal)
-//                                    (Text(up) + Text(" 5,5 %"))
-//                                        .font(.system(size:18
-//                                                      ,weight: .semibold
-//                                                      ,design: .rounded
-//                                                     )
-//                                        )
-//                                        .foregroundColor(.CustomBlack)
-//                                        .padding(5)
-//                                }
+                                //                                ZStack {
+                                //                                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                //                                        .foregroundColor(Color.CustomTeal)
+                                //                                    (Text(up) + Text(" 5,5 %"))
+                                //                                        .font(.system(size:18
+                                //                                                      ,weight: .semibold
+                                //                                                      ,design: .rounded
+                                //                                                     )
+                                //                                        )
+                                //                                        .foregroundColor(.CustomBlack)
+                                //                                        .padding(5)
+                                //                                }
                                 
                                 // MARK: Try3
                                 (Text(up) + Text(" 5,5 %"))
@@ -171,8 +174,8 @@ struct DashboardOverview: View {
                                                   ,design: .rounded
                                                  )
                                     )
-                                    .background(Color.CustomTeal)
-                                    .foregroundColor(.CustomBlack)
+                                    .background(.primary)
+                                    .foregroundColor(.black)
                                     .padding(5)
                                     .cornerRadius(14)
                                 
@@ -187,7 +190,6 @@ struct DashboardOverview: View {
                         }
                         .padding(.leading, 25.0)
                         .padding(.trailing, 12.0)
-                        //                        .background(Color.CustomBlack)
                         .background(Color.CustomDarkTeal)
                         .cornerRadius(8)
                         .frame(width: 325
@@ -215,6 +217,10 @@ struct DashboardOverview: View {
                 .navigationTitle("Dashboard")
                 .navigationBarHidden(true)
             }
+        }
+        .onAppear() {
+            homeVM.getProfile()
+            homeVM.getItemSales()
         }
     }
     
@@ -248,7 +254,7 @@ struct DashboardOverview: View {
     
     struct DashboardOverview_Previews: PreviewProvider {
         static var previews: some View {
-            DashboardOverview()
+            DashboardOverview(homeVM: HomeViewModel())
         }
     }
     

@@ -27,7 +27,25 @@ class HomeViewModel: ObservableObject {
     private var cloudHandler = CloudHandler()
     private let docCoreDataHandler = CoreDataHandler()
     
+    @Published
+    var token: String = ""
+    @Published
+    var error: String = ""
+    @Published
+    var showAlert: Bool = false
+    
+    @Published
+    var itemSales: [ItemSalesModel] = []
+    @Published
+    var user: ResponseUser = ResponseUser()
+    
+    private var subscriptions: Set<AnyCancellable> = []
+    private var dataManager: ServiceProtocol
+    
+    // private let debounceInterval: DispatchQueue.SchedulerTimeType.Stride = .seconds(1)
+    
     init() {
+        self.dataManager = Service.shared
         self.documents = docCoreDataHandler.listOfDocuments()
         self.documents = documents.sorted(by: {($0.name ?? "") < ($1.name ?? "")})
         DispatchQueue.global(qos: .userInitiated).async {[self] in
@@ -38,6 +56,76 @@ class HomeViewModel: ObservableObject {
                 localHandler.startupActivities()
             }
         }
+    }
+    
+    func getToken(code: String) {
+        dataManager.getAccessToken(code)
+            .sink {[weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .failure(let error):
+                    self.error = error.errorDescription ?? ""
+                    print(self.error)
+                case .finished:
+                    break
+                }
+            } receiveValue: {[weak self] value in
+                guard let self = self else { return }
+                self.token = value.accessToken
+                KeychainHelper.standard.save(Data(self.token.utf8), type: "access-token")
+            }
+            .store(in: &subscriptions)
+    }
+    
+    func getProfile() {
+        let data = KeychainHelper.standard.read(type: "access-token") ?? Data("".utf8)
+        let accessToken = String(data: data, encoding: .utf8)!
+        
+        dataManager.getProfile(accessToken)
+            .sink {[weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .failure(let error):
+                    self.error = error.errorDescription ?? ""
+                    print("Profile \(self.error)")
+                case .finished:
+                    break
+                }
+            } receiveValue: {[weak self] value in
+                guard let self = self else { return }
+                self.user = value
+                KeychainHelper.standard.save(Data(String(self.user.outletIds[0]).utf8), type: "outlet-id")
+            }
+            .store(in: &subscriptions)
+    }
+    
+    func getItemSales() {
+        let dataAccessToken = KeychainHelper.standard.read(type: "access-token") ?? Data("".utf8)
+        let dataOutletId = KeychainHelper.standard.read(type: "outlet-id") ?? Data("".utf8)
+        let accessToken = String(data: dataAccessToken, encoding: .utf8)!
+        let outletId = String(data: dataOutletId, encoding: .utf8)!
+        
+        dataManager.getItemSales(accessToken, Int(outletId) ?? 0)
+            .sink {[weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .failure(let error):
+                    self.error = error.errorDescription ?? ""
+                    print("Item Sales \(self.error)")
+                case .finished:
+                    break
+                }
+            } receiveValue: {[weak self] value in
+                guard let self = self else { return }
+                self.itemSales = value.data.itemSales
+                print(self.itemSales)
+            }
+            .store(in: &subscriptions)
+    }
+    
+    func createAlert( with error: NetworkError ) {
+        self.error = error.backendError == nil ? error.initialError.localizedDescription : error.backendError!.message
+        self.showAlert = true
     }
     
     /// Checks if iCloud account is setup
