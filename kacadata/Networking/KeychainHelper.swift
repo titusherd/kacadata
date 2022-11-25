@@ -12,36 +12,36 @@ final class KeychainHelper {
     static let standard = KeychainHelper()
     private init() {}
     
-    func save(_ data: Data) {
+    func save(_ data: Data, type: String) {
         let query = [
             kSecValueData: data,
             kSecClass: kSecClassGenericPassword,
-            kSecAttrService: "access-token",
+            kSecAttrService: type,
             kSecAttrAccount: "moka"
         ] as CFDictionary
         
         let status = SecItemAdd(query, nil)
         
-//        if status != errSecSuccess {
-//            debugPrint("Error : \(status)")
-//        }
-        
         if status != errSecDuplicateItem {
             let query = [
                 kSecClass: kSecClassGenericPassword,
-                kSecAttrService: "access-token",
+                kSecAttrService: type,
                 kSecAttrAccount: "moka"
             ] as CFDictionary
             
             let updatedData = [kSecValueData: data] as CFDictionary
             SecItemUpdate(query, updatedData)
         }
+        
+//        if status != errSecSuccess {
+//            debugPrint("Error : \(status)")
+//        }
     }
     
-    func read() -> Data? {
+    func read(type: String) -> Data? {
         let query = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrService: "access-token",
+            kSecAttrService: type,
             kSecAttrAccount: "moka",
             kSecReturnData: true
         ] as CFDictionary
@@ -52,10 +52,10 @@ final class KeychainHelper {
         return (result as? Data)
     }
     
-    func delete() {
+    func delete(type: String) {
         let query = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrService: "access-token",
+            kSecAttrService: type,
             kSecAttrAccount: "moka",
         ] as CFDictionary
         

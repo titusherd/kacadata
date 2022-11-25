@@ -12,7 +12,7 @@ import Alamofire
 protocol ServiceProtocol {
     func getAccessToken(_ code: String) -> AnyPublisher<ResponseToken, AFError>
     func getProfile(_ accessToken: String) -> AnyPublisher<ResponseUser, AFError>
-    func getItemSales(_ accessToken: String, _ outletId: Int) -> AnyPublisher<ResponseBase<[ItemSalesModel]>, AFError>
+    func getItemSales(_ accessToken: String, _ outletId: Int) -> AnyPublisher<ResponseBase<ResponseItemSales>, AFError>
 }
 
 class Service {
@@ -21,7 +21,7 @@ class Service {
 }
 
 extension Service: ServiceProtocol {
-    func getItemSales(_ accessToken: String, _ outletId: Int) -> AnyPublisher<ResponseBase<[ItemSalesModel]>, AFError> {
+    func getItemSales(_ accessToken: String, _ outletId: Int) -> AnyPublisher<ResponseBase<ResponseItemSales>, AFError> {
         let url = URL(string:  Constant.baseUrl + "/v3/outlets/\(outletId)/reports/item_sales")!
         
         let headers: HTTPHeaders = [
@@ -31,7 +31,7 @@ extension Service: ServiceProtocol {
         
         return AF.request(url, method: .get, headers: headers)
             .validate()
-            .publishDecodable(type: ResponseBase<[ItemSalesModel]>.self)
+            .publishDecodable(type: ResponseBase<ResponseItemSales>.self)
             .value()
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()

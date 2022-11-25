@@ -220,6 +220,7 @@ struct DashboardOverview: View {
         }
         .onAppear() {
             homeVM.getProfile()
+            homeVM.getItemSales()
         }
     }
     

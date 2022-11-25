@@ -22,6 +22,7 @@
 		496A6CA928FE742E009A1C01 /* LocalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6CA828FE742E009A1C01 /* LocalHandler.swift */; };
 		496A6CAB28FE743D009A1C01 /* CloudHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6CAA28FE743D009A1C01 /* CloudHandler.swift */; };
 		496A6CAD28FE7453009A1C01 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A6CAC28FE7453009A1C01 /* CoreDataHandler.swift */; };
+		4988EF742930A9BE00512AAE /* ResponseItemSales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4988EF732930A9BE00512AAE /* ResponseItemSales.swift */; };
 		49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA96D28F5467300EDC09D /* kacadataApp.swift */; };
 		49AAA97028F5467300EDC09D /* ContentViewTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAA96F28F5467300EDC09D /* ContentViewTemp.swift */; };
 		49AAA97228F5467400EDC09D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AAA97128F5467400EDC09D /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		496A6CA828FE742E009A1C01 /* LocalHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalHandler.swift; sourceTree = "<group>"; };
 		496A6CAA28FE743D009A1C01 /* CloudHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudHandler.swift; sourceTree = "<group>"; };
 		496A6CAC28FE7453009A1C01 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		4988EF732930A9BE00512AAE /* ResponseItemSales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseItemSales.swift; sourceTree = "<group>"; };
 		49AAA96A28F5467300EDC09D /* kacadata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kacadata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AAA96D28F5467300EDC09D /* kacadataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kacadataApp.swift; sourceTree = "<group>"; };
 		49AAA96F28F5467300EDC09D /* ContentViewTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTemp.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				4937818929223F5E00750F08 /* ResponseToken.swift */,
 				49CB34EF28F549DC00C8F656 /* ResponseUser.swift */,
 				4937818F292A404300750F08 /* ResponseBase.swift */,
+				4988EF732930A9BE00512AAE /* ResponseItemSales.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				F66665B228FFDEAB0083E6B8 /* DashboardOverview.swift in Sources */,
 				582101FF2915870F00A119F3 /* ModalDeleteOutletView.swift in Sources */,
 				F66665B429012A340083E6B8 /* SiteView.swift in Sources */,
+				4988EF742930A9BE00512AAE /* ResponseItemSales.swift in Sources */,
 				49AAA97028F5467300EDC09D /* ContentViewTemp.swift in Sources */,
 				49AAA96E28F5467300EDC09D /* kacadataApp.swift in Sources */,
 				582101F12915860E00A119F3 /* DashboardViewModel.swift in Sources */,

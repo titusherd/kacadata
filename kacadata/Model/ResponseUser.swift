@@ -12,10 +12,10 @@ struct ResponseUser: Codable {
     var email: String = ""
     var firstName: String = ""
     var lastName: String = ""
-//    var businessId: Int = 0
-//    var businessName: String = ""
-//    var outletIds: [Int] = []
-//    var outletNames: [String] = []
+//    var businessId: Int? = 0
+//    var businessName: String? = ""
+    var outletIds: [Int] = []
+    var outletNames: [String] = []
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -24,7 +24,7 @@ struct ResponseUser: Codable {
         case lastName = "last_name"
 //        case businessId = "business_id"
 //        case businessName = "business_name"
-//        case outletIds = "outlet_ids"
-//        case outletNames = "outlet_names"
+        case outletIds = "outlet_ids"
+        case outletNames = "outlet_names"
     }
 }

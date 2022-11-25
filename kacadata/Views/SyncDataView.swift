@@ -125,7 +125,7 @@ struct SyncDataView: View {
                 .background(Color.background)
             }
             .onAppear() {
-                let data = KeychainHelper.standard.read() ?? Data("".utf8)
+                let data = KeychainHelper.standard.read(type: "access-token") ?? Data("".utf8)
                 let accessToken = String(data: data, encoding: .utf8)!
                 isTokenAvailable = !accessToken.isEmpty
             }

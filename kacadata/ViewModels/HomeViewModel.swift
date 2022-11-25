@@ -72,13 +72,13 @@ class HomeViewModel: ObservableObject {
             } receiveValue: {[weak self] value in
                 guard let self = self else { return }
                 self.token = value.accessToken
-                KeychainHelper.standard.save(Data(self.token.utf8))
+                KeychainHelper.standard.save(Data(self.token.utf8), type: "access-token")
             }
             .store(in: &subscriptions)
     }
     
     func getProfile() {
-        let data = KeychainHelper.standard.read() ?? Data("".utf8)
+        let data = KeychainHelper.standard.read(type: "access-token") ?? Data("".utf8)
         let accessToken = String(data: data, encoding: .utf8)!
         
         dataManager.getProfile(accessToken)
@@ -93,29 +93,32 @@ class HomeViewModel: ObservableObject {
                 }
             } receiveValue: {[weak self] value in
                 guard let self = self else { return }
-                print(value)
                 self.user = value
+                KeychainHelper.standard.save(Data(String(self.user.outletIds[0]).utf8), type: "outlet-id")
             }
             .store(in: &subscriptions)
     }
     
     func getItemSales() {
-        let data = KeychainHelper.standard.read() ?? Data("".utf8)
-        let accessToken = String(data: data, encoding: .utf8)!
+        let dataAccessToken = KeychainHelper.standard.read(type: "access-token") ?? Data("".utf8)
+        let dataOutletId = KeychainHelper.standard.read(type: "outlet-id") ?? Data("".utf8)
+        let accessToken = String(data: dataAccessToken, encoding: .utf8)!
+        let outletId = String(data: dataOutletId, encoding: .utf8)!
         
-        dataManager.getItemSales(accessToken, 12)
+        dataManager.getItemSales(accessToken, Int(outletId) ?? 0)
             .sink {[weak self] completion in
                 guard let self = self else { return }
                 switch completion {
                 case .failure(let error):
                     self.error = error.errorDescription ?? ""
-                    print(self.error)
+                    print("Item Sales \(self.error)")
                 case .finished:
                     break
                 }
             } receiveValue: {[weak self] value in
                 guard let self = self else { return }
-                self.itemSales = value.data
+                self.itemSales = value.data.itemSales
+                print(self.itemSales)
             }
             .store(in: &subscriptions)
     }

@@ -103,7 +103,7 @@ struct WebView: UIViewRepresentable {
                 if currentUrl.absoluteString.contains(Constant.redirectUri) {
                     let code = currentUrl.absoluteString.components(separatedBy: "code=")[1]
                     viewModel.getToken(code: code)
-                    let data = KeychainHelper.standard.read() ?? Data("".utf8)
+                    let data = KeychainHelper.standard.read(type: "access-token") ?? Data("".utf8)
                     let accessToken = String(data: data, encoding: .utf8)!
                     isTokenAvailable = !accessToken.isEmpty
                     showWebView = false
